@@ -11,6 +11,6 @@ void readFromFile(std::string filename) {
     std::ifstream read(filename);
     std::string linha;
     while (getline(linha, read)) {
-        
+//nothing
     }
 }
