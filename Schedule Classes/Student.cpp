@@ -2,14 +2,13 @@
 // Created by antero on 25-10-2023.
 //
 
-#include <string>
 #include "Student.h"
-#include <iostream>
-#include <fstream>
 
-Student::Student(int code, std::string name) {
 
+Student::Student(int code_, string name_) {
+    code = code_;
+    name = name_;
 }
 
-
-}
+int Student::getCode() const {return code;}
+string Student::getName() const {return name;}

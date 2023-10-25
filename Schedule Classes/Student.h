@@ -5,8 +5,10 @@
 #ifndef PROJETO_AED_1_STUDENT_H
 #define PROJETO_AED_1_STUDENT_H
 
+#include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Student {
@@ -16,7 +18,9 @@ class Student {
 public:
     Student(int code, string name);
     int getCode() const;
-    int getName() const;
+    string getName() const;
+
+
 
 };
 
