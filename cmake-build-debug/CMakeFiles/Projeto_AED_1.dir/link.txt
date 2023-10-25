@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Projeto_AED_1.dir/main.cpp.o CMakeFiles/Projeto_AED_1.dir/Students.cpp.o -o Projeto_AED_1 
