@@ -1,7 +1,3 @@
-//
-// Created by antero on 25-10-2023.
-//
-
 #include "Student.h"
 
 

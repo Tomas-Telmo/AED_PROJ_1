@@ -1,13 +1,9 @@
-//
-// Created by antero on 25-10-2023.
-//
-
 #ifndef PROJETO_AED_1_STUDENT_H
 #define PROJETO_AED_1_STUDENT_H
 
 #include <iostream>
 #include <string>
-#include <vector>
+
 
 using namespace std;
 

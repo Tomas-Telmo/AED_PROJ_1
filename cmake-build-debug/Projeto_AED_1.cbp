@@ -82,10 +82,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Students.cpp">
+		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Student.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Students.h">
+		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Student.h">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/StudentClass.cpp">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/StudentClass.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
 		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/main.cpp">

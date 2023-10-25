@@ -128,29 +128,53 @@ Projeto_AED_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/build
 .PHONY : Projeto_AED_1/fast
 
-Schedule_Classes/Students.obj: Schedule_Classes/Students.cpp.obj
-.PHONY : Schedule_Classes/Students.obj
+Schedule_Classes/Student.obj: Schedule_Classes/Student.cpp.obj
+.PHONY : Schedule_Classes/Student.obj
 
 # target to build an object file
-Schedule_Classes/Students.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj
-.PHONY : Schedule_Classes/Students.cpp.obj
+Schedule_Classes/Student.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj
+.PHONY : Schedule_Classes/Student.cpp.obj
 
-Schedule_Classes/Students.i: Schedule_Classes/Students.cpp.i
-.PHONY : Schedule_Classes/Students.i
+Schedule_Classes/Student.i: Schedule_Classes/Student.cpp.i
+.PHONY : Schedule_Classes/Student.i
 
 # target to preprocess a source file
-Schedule_Classes/Students.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.i
-.PHONY : Schedule_Classes/Students.cpp.i
+Schedule_Classes/Student.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.i
+.PHONY : Schedule_Classes/Student.cpp.i
 
-Schedule_Classes/Students.s: Schedule_Classes/Students.cpp.s
-.PHONY : Schedule_Classes/Students.s
+Schedule_Classes/Student.s: Schedule_Classes/Student.cpp.s
+.PHONY : Schedule_Classes/Student.s
 
 # target to generate assembly for a file
-Schedule_Classes/Students.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.s
-.PHONY : Schedule_Classes/Students.cpp.s
+Schedule_Classes/Student.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.s
+.PHONY : Schedule_Classes/Student.cpp.s
+
+Schedule_Classes/StudentClass.obj: Schedule_Classes/StudentClass.cpp.obj
+.PHONY : Schedule_Classes/StudentClass.obj
+
+# target to build an object file
+Schedule_Classes/StudentClass.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj
+.PHONY : Schedule_Classes/StudentClass.cpp.obj
+
+Schedule_Classes/StudentClass.i: Schedule_Classes/StudentClass.cpp.i
+.PHONY : Schedule_Classes/StudentClass.i
+
+# target to preprocess a source file
+Schedule_Classes/StudentClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.i
+.PHONY : Schedule_Classes/StudentClass.cpp.i
+
+Schedule_Classes/StudentClass.s: Schedule_Classes/StudentClass.cpp.s
+.PHONY : Schedule_Classes/StudentClass.s
+
+# target to generate assembly for a file
+Schedule_Classes/StudentClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.s
+.PHONY : Schedule_Classes/StudentClass.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -185,9 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Projeto_AED_1
-	@echo ... Schedule_Classes/Students.obj
-	@echo ... Schedule_Classes/Students.i
-	@echo ... Schedule_Classes/Students.s
+	@echo ... Schedule_Classes/Student.obj
+	@echo ... Schedule_Classes/Student.i
+	@echo ... Schedule_Classes/Student.s
+	@echo ... Schedule_Classes/StudentClass.obj
+	@echo ... Schedule_Classes/StudentClass.i
+	@echo ... Schedule_Classes/StudentClass.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Students.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj.d"
+  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Student.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj.d"
+  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/StudentClass.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj.d"
   "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj.d"
   )
 
