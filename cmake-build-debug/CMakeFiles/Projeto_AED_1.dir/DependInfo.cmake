@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/antero/Desktop/FEUP_UBUNTO/AED/projeto/Students.cpp" "CMakeFiles/Projeto_AED_1.dir/Students.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Students.cpp.o.d"
-  "/home/antero/Desktop/FEUP_UBUNTO/AED/projeto/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o.d"
+  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Students.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj.d"
+  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

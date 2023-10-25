@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Projeto_AED_1.dir/Students.cpp.o"
-  "CMakeFiles/Projeto_AED_1.dir/Students.cpp.o.d"
-  "CMakeFiles/Projeto_AED_1.dir/main.cpp.o"
-  "CMakeFiles/Projeto_AED_1.dir/main.cpp.o.d"
-  "Projeto_AED_1"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Students.cpp.obj.d"
+  "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj"
+  "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj.d"
+  "Projeto_AED_1.exe"
+  "Projeto_AED_1.exe.manifest"
   "Projeto_AED_1.pdb"
+  "libProjeto_AED_1.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

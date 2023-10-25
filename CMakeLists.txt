@@ -4,5 +4,5 @@ project(Projeto_AED_1)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Projeto_AED_1 main.cpp
-        Students.h
-        Students.cpp)
+        "Schedule Classes/Student.h"
+        "Schedule Classes/Student.cpp")
