@@ -15,10 +15,10 @@ class UC{
 
 public:
     UC();
-    UC(int UCCode_, int )
+    UC(int UCCode_);
     int getNumberOfClasses();
     string getUCCode();
-    void readUCFile(const string filename);
+    void readUCFile(const string &filename);
 
 };
 

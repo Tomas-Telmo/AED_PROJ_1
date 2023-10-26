@@ -1,7 +1,15 @@
 #include "UC.h"
+#include <sstream>
+#include <list>
+#include <iostream>
 #include <fstream>
+#include <string>
 
-void UC(){}
+UC::UC(){}
+
+UC::UC(int UCCode_){
+    this->UCCode=UCCode_;
+}
 
 int UC::getNumberOfClasses() {
     return this->numberOfClasses;
@@ -14,15 +22,20 @@ string UC::getUCCode() {
 void UC::readUCFile(const string &filename) {
     ifstream sfile;
 
-    if(!filename.is_open()){
+    if (!sfile.is_open()) {
+        string line;
+        while (getline(sfile, line)) {
+            set<string> createdUCs;
+            istringstream iss(line);
+            string uccode;
+            string classcode;
+            iss >> uccode >> classcode;
+            if(createdUCs.find(uccode)!=createdUCs.end() ){
+                createdUCs.insert(uccode);
+            }
+            sfile.close();
+        }
+    } else {
         cerr << "Error: Unable to open the file " << filename << endl;
-        return;
-    }
-    string line;
-    while (getline(sfile,line)){
-        string uccode;
-        string classcode;
-        line<<uccode<<line;
-        UC newUC(U)
     }
 }
