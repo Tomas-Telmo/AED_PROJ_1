@@ -1,16 +1,16 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj.d"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj.d"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.obj"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.obj.d"
-  "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj"
-  "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj.d"
-  "Projeto_AED_1.exe"
-  "Projeto_AED_1.exe.manifest"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o.d"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o.d"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o.d"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o.d"
+  "CMakeFiles/Projeto_AED_1.dir/main.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/main.cpp.o.d"
+  "Projeto_AED_1"
   "Projeto_AED_1.pdb"
-  "libProjeto_AED_1.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

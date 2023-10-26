@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/Student.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj.d"
-  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/StudentClass.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj.d"
-  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/Schedule Classes/UC.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.obj.d"
-  "C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/Projeto-1 AED/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.obj.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Class.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Student.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/StudentClass.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/UC.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
