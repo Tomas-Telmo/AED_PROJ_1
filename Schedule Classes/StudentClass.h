@@ -2,19 +2,24 @@
 #define PROJETO_AED_1_STUDENTCLASS_H
 
 #include "Student.h"
-#include <vector>
+#include <set>
+#include <fstream>
 
 class StudentClass{
-    vector <Student> students;
+    set<Student> students;
     int capacity;
-    int code;
+    string code;
     //possivelmente mais atributos se criamos a classe UC ou nao
 
 public:
-    StudentClass();
+    StudentClass(set <Student> students_, int capacity_,int code_);
+
+    set <Student> getStudents();
+    string getCode();
     int getCapacity();
-    int getCode();
-    void readFile(string filename);
+
+    //bool operator<(const Student& other) const; ns se é para dar overload aqui ou no student, fiz no student
+    void readFile(ifstream &filename);
 
 };
 #endif //PROJETO_AED_1_STUDENTCLASS_H

@@ -176,6 +176,30 @@ Schedule_Classes/StudentClass.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.s
 .PHONY : Schedule_Classes/StudentClass.cpp.s
 
+Schedule_Classes/UC.obj: Schedule_Classes/UC.cpp.obj
+.PHONY : Schedule_Classes/UC.obj
+
+# target to build an object file
+Schedule_Classes/UC.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.obj
+.PHONY : Schedule_Classes/UC.cpp.obj
+
+Schedule_Classes/UC.i: Schedule_Classes/UC.cpp.i
+.PHONY : Schedule_Classes/UC.i
+
+# target to preprocess a source file
+Schedule_Classes/UC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.i
+.PHONY : Schedule_Classes/UC.cpp.i
+
+Schedule_Classes/UC.s: Schedule_Classes/UC.cpp.s
+.PHONY : Schedule_Classes/UC.s
+
+# target to generate assembly for a file
+Schedule_Classes/UC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto_AED_1.dir\build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.s
+.PHONY : Schedule_Classes/UC.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -215,6 +239,9 @@ help:
 	@echo ... Schedule_Classes/StudentClass.obj
 	@echo ... Schedule_Classes/StudentClass.i
 	@echo ... Schedule_Classes/StudentClass.s
+	@echo ... Schedule_Classes/UC.obj
+	@echo ... Schedule_Classes/UC.i
+	@echo ... Schedule_Classes/UC.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

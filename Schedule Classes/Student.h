@@ -12,10 +12,10 @@ class Student {
     string name;
 
 public:
-    Student(int code, string name);
+    Student(int code_, string name_);
     int getCode() const;
     string getName() const;
-
+    bool operator<(const Student &other_student) const;
 
 
 };
