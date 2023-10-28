@@ -7,25 +7,22 @@
 #include <iostream>
 
 class StudentClass{
-
-
     set<Student> students;
-    int capacity;
     string code;
-    //possivelmente mais atributos se criamos a classe UC ou nao
 
 public:
-    StudentClass();
-    StudentClass(set<Student> students_, int capacity_, int code_);
+    StudentClass() {};
+    StudentClass(string code_, set<Student> students_ = {});
+    StudentClass(const StudentClass& studentclass);
 
-    set <Student> getStudents();
-
+    set <Student> getStudents() const;
     string getCode();
     int getCapacity();
 
-    //bool operator<(const Student& other) const; ns se é para dar overload aqui ou no student, fiz no student
-    void readFile(ifstream &filename);
+    void setCode(string code_);
+    void setStudents(set<Student> students_);
 
-    void readFile(const string &filename);
+    void addStudent(Student student);
+    bool operator<(const StudentClass& other) const;
 };
 #endif //PROJETO_AED_1_STUDENTCLASS_H

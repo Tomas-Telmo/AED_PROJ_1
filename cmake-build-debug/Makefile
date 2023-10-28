@@ -225,29 +225,29 @@ Schedule_Classes/UC.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.s
 .PHONY : Schedule_Classes/UC.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+Schedule_Classes/main.o: Schedule_Classes/main.cpp.o
+.PHONY : Schedule_Classes/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/main.cpp.o
-.PHONY : main.cpp.o
+Schedule_Classes/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o
+.PHONY : Schedule_Classes/main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+Schedule_Classes/main.i: Schedule_Classes/main.cpp.i
+.PHONY : Schedule_Classes/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/main.cpp.i
-.PHONY : main.cpp.i
+Schedule_Classes/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.i
+.PHONY : Schedule_Classes/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Schedule_Classes/main.s: Schedule_Classes/main.cpp.s
+.PHONY : Schedule_Classes/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/main.cpp.s
-.PHONY : main.cpp.s
+Schedule_Classes/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.s
+.PHONY : Schedule_Classes/main.cpp.s
 
 # Help Target
 help:
@@ -270,9 +270,9 @@ help:
 	@echo "... Schedule_Classes/UC.o"
 	@echo "... Schedule_Classes/UC.i"
 	@echo "... Schedule_Classes/UC.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Schedule_Classes/main.o"
+	@echo "... Schedule_Classes/main.i"
+	@echo "... Schedule_Classes/main.s"
 .PHONY : help
 
 

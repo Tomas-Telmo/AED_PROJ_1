@@ -4,15 +4,69 @@
 
 #include "Class.h"
 
-string Class::getWeekday(Class c) {return this->weekday;}
+Class::Class(string weekday_, double starthour_, double duration_, string type_, string classcode_, string uccode_) {
+    this->weekday = weekday_;
+    this->starthour = starthour_;
+    this->duration = duration_;
+    this->type = type_;
+    this->classCode = classcode_;
+    this->uCcode = uccode_;
+}
 
-double Class::getStarthour(Class c) {return  this->starthour;}
+Class::Class(const Class &class_) {
+    this->weekday = class_.weekday;
+    this->starthour = class_.starthour;
+    this->duration = class_.duration;
+    this->type = class_.type;
+    this->classCode = class_.classCode;
+    this->uCcode = class_.uCcode;
+}
 
-double Class::getDuration(Class) {return this->duration;}
+string Class::getWeekday() {
+    return this->weekday;
+}
 
-string Class::getType(Class) {return this->type;}
+double Class::getStarthour() {
+    return this->starthour;
+}
 
-string Class::getClassCode(Class) {return this->classCode;}
+double Class::getDuration() {
+    return this->duration;
+}
 
-string Class::getUcCode(Class) {return this->uCcode;}
+string Class::getType() {
+    return this->type;
+}
+
+string Class::getClassCode() {
+    return this->classCode;
+}
+
+string Class::getUcCode() {
+    return this->uCcode;
+}
+
+
+void Class::setBegining(string weekday_, double starthour_) {
+    this->weekday = weekday_;
+    this->starthour = starthour_;
+}
+
+void Class::setDuration(double duration_) {
+    this->duration = duration_;
+}
+
+void Class::setType(string type_) {
+    this->type = type_;
+}
+
+void Class::setUcCode(string code) {
+    this->uCcode = code;
+}
+
+void Class::setClassCode(string classcode_) {
+    this->classCode = classcode_;
+}
+
+
 

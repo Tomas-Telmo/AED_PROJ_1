@@ -106,7 +106,7 @@
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/UC.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/main.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/main.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/CMakeLists.txt">

@@ -9,16 +9,25 @@
 using namespace std;
 
 class UC{
-    int numberOfClasses;
-    string UCCode;
-    set <StudentClass> UCClasses;
+    string UcCode;
+    set<StudentClass> UcClasses;
 
 public:
     UC();
-    UC(int UCCode_);
-    int getNumberOfClasses();
+    UC(string UcCode_, set<StudentClass> UcClasses_={});
+    UC(UC const &uc);
+
     string getUCCode();
-    void readUCFile(const string &filename);
+    set<StudentClass> getUcClasses();
+    int getNumberOfClasses();
+
+    void setUcCode(string uccode);
+    void setUcClasses(set<StudentClass> UcClasses_);
+
+    void addStudentClass(StudentClass Class);
+
+    void read_ClassesPerUCFile(ifstream &filename);
+    void read_StudentsClassesFile(ifstream &filename);
 
 };
 

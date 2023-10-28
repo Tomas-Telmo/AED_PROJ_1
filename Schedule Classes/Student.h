@@ -8,16 +8,21 @@
 using namespace std;
 
 class Student {
-    int code;
+    string code;
     string name;
 
 public:
-    Student(int code_, string name_);
-    int getCode() const;
+    Student();
+    Student(string code_, string name_);
+    Student(Student const &student);
+
+    string getCode() const;
     string getName() const;
-    bool operator<(const Student &other_student) const;
 
+    void setCode(string code_);
+    void setName(string name_);
 
+    bool operator<(const Student& other) const;
 };
 
 

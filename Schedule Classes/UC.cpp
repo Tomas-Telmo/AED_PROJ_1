@@ -5,37 +5,99 @@
 #include <fstream>
 #include <string>
 
-UC::UC(){}
-
-UC::UC(int UCCode_){
-    this->UCCode=UCCode_;
+UC::UC(string UcCode_, set<StudentClass> UcClasses_) {
+    this->UcCode = UcCode_;
+    this->UcClasses = UcClasses_;
 }
 
-int UC::getNumberOfClasses() {
-    return this->numberOfClasses;
+UC::UC(const UC &uc) {
+    this->UcClasses = uc.UcClasses;
+    this->UcCode = uc.UcCode;
 }
 
 string UC::getUCCode() {
-    return this->UCCode;
+    return this->UcCode;
 }
 
-void UC::readUCFile(const string &filename) {
-    ifstream sfile;
+set<StudentClass> UC::getUcClasses() {
+    return this->UcClasses;
+}
 
-    if (!sfile.is_open()) {
-        string line;
-        while (getline(sfile, line)) {
-            set<string> createdUCs;
-            istringstream iss(line);
-            string uccode;
-            string classcode;
-            iss >> uccode >> classcode;
-            if(createdUCs.find(uccode)!=createdUCs.end() ){
-                createdUCs.insert(uccode);
-            }
-            sfile.close();
+int UC::getNumberOfClasses() {
+    return this->UcClasses.size();
+}
+
+void UC::setUcCode(string uccode) {
+    this->UcCode = uccode;
+}
+
+void UC::setUcClasses(set<StudentClass> UcClasses_) {
+    this->UcClasses = UcClasses_;
+}
+
+void UC::addStudentClass(StudentClass stdtClass) {
+    this->UcClasses.insert(stdtClass);
+}
+
+
+//read file classes per uc -------> COMES FIRST!!!
+void UC::read_ClassesPerUCFile(ifstream &filename) {
+    string dummy;
+    string line;
+    string UC_code;
+    string class_code;
+
+    if(!filename.is_open()){
+        cerr << "ERROR: Couldn't open the file " << endl;
+    }
+
+    getline(filename,dummy); //skip 1st line
+
+    while(getline(filename,line)) {
+        stringstream ss(line);
+
+        getline(ss,UC_code,',');
+        getline(ss,class_code);
+
+        if(UC_code == UcCode){
+            UcClasses.insert(StudentClass(class_code));
         }
-    } else {
-        cerr << "Error: Unable to open the file " << filename << endl;
+
     }
 }
+
+//read file student classes
+
+void UC::read_StudentsClassesFile(ifstream &filename) {
+    string dummy;
+    string line;
+    string student_code;
+    string student_name;
+    string UC_code;
+    string class_code;
+
+    if(!filename.is_open()){
+        cerr << "ERROR: Unable to open the file " << endl;
+    }
+
+    getline(filename,dummy); //skip 1st line
+
+    while(getline(filename,line)){
+        stringstream ss(line);
+
+        getline(ss,student_code,',');
+        getline(ss, student_name, ',');
+        getline(ss,UC_code,',');
+        getline(ss,class_code);
+
+        if(UC_code == UcCode){
+            for(StudentClass stc : UcClasses ){
+                if(stc.getCode() == class_code){
+                    stc.addStudent(Student(student_code,student_name));
+                }
+            }
+        }
+
+    }
+}
+

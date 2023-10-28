@@ -13,18 +13,26 @@ class Class {
     double starthour;
     double duration;
     string type;
-
     string classCode;
     string uCcode;
 public:
     Class();
-    Class(string weekday_, double starthour_, double duration_, string type_);
-    string getWeekday(Class);
-    double getStarthour(Class);
-    double getDuration(Class);
-    string getType(Class);
-    string getClassCode(Class);
-    string getUcCode(Class);
+    Class(string weekday_, double starthour_, double duration_, string type_, string classcode_, string uccode_);
+    Class(Class const &class_);
+
+    string getWeekday();
+    double getStarthour();
+    double getDuration();
+    string getType();
+    string getClassCode();
+    string getUcCode();
+
+    void setBegining(string weekday_, double starthour_);
+    void setDuration(double duration_);
+    void setType(string type_);
+    void setClassCode(string classcode_);
+    void setUcCode(string code);
+
 };
 
 #endif //PROJETO_AED_1_CLASS_H

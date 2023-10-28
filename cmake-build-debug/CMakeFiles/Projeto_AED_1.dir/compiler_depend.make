@@ -727,9 +727,15 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o: /home/antero/Desktop/FEU
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/c++/11/list \
+  /usr/include/c++/11/bits/stl_list.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/list.tcc
 
-CMakeFiles/Projeto_AED_1.dir/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/main.cpp \
+CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/main.cpp \
   /usr/include/stdc-predef.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -908,8 +914,29 @@ CMakeFiles/Projeto_AED_1.dir/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/pr
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
+  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/UC.h \
+  /usr/include/c++/11/set \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/stl_set.h \
+  /usr/include/c++/11/bits/stl_multiset.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/StudentClass.h \
+  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/Student.h
 
+
+/usr/include/c++/11/bits/list.tcc:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/c++/11/list:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
@@ -1033,6 +1060,8 @@ CMakeFiles/Projeto_AED_1.dir/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/pr
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
+/usr/include/c++/11/bits/stl_list.h:
+
 /usr/include/c++/11/bits/stringfwd.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
@@ -1116,8 +1145,6 @@ CMakeFiles/Projeto_AED_1.dir/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/pr
 /usr/include/c++/11/bits/ptr_traits.h:
 
 /usr/include/c++/11/bits/postypes.h:
-
-/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/main.cpp:
 
 /usr/include/c++/11/bits/streambuf.tcc:
 
@@ -1268,6 +1295,8 @@ CMakeFiles/Projeto_AED_1.dir/main.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/pr
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
+
+/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/main.cpp:
 
 /usr/include/c++/11/bits/localefwd.h:
 

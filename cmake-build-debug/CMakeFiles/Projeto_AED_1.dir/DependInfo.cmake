@@ -12,7 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Student.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o.d"
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/StudentClass.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o.d"
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/UC.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o.d"
-  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/main.cpp" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/main.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/main.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
