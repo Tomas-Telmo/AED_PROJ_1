@@ -3,12 +3,13 @@
 #include <string>
 #include "UC.h"
 #include "StudentClass.h"
+#include "DataManager.h"
 
 using namespace std;
 int main() {
-    ifstream classes_per_uc_file;
+    /*ifstream classes_per_uc_file;
     ifstream students_classes_file;
-    UC uc = UC("L.EIC001");
+    UC uc = UC("L.EIC001", {});
 
     //read and parse 1st file-------------
 
@@ -45,6 +46,13 @@ int main() {
             cout<< st.getCode()<<','<<st.getName()<<endl;
         }
     }
-
+    */
+    DataManager dt = DataManager("","","/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/students_classes.csv");
+    int i=0;
+    for (auto t : dt.getStudents()) {
+        i++;
+        cout<<"up:"<<t.getCode()<<" nome:"<<t.getName()<<'\n';
+    }
+    cout<<i;
     return 0;
 }

@@ -14,7 +14,7 @@ class UC{
 
 public:
     UC();
-    UC(string UcCode_, set<StudentClass> UcClasses_={});
+    UC(string UcCode_, set<StudentClass> UcClasses_): UcCode(UcCode_), UcClasses(UcClasses_){};
     UC(UC const &uc);
 
     string getUCCode();

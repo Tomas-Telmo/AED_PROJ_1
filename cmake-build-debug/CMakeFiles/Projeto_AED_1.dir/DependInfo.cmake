@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Class.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o.d"
+  "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/DataManager.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/DataManager.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/DataManager.cpp.o.d"
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Student.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o.d"
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/StudentClass.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o.d"
   "/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/UC.cpp" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o" "gcc" "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o.d"
