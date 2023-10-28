@@ -39,6 +39,10 @@ void UC::addStudentClass(StudentClass stdtClass) {
     this->UcClasses.insert(stdtClass);
 }
 
+bool UC::operator<(const UC &other) const {
+    return this->UcCode < other.UcCode;
+}
+
 
 //read file classes per uc -------> COMES FIRST!!!
 void UC::read_ClassesPerUCFile(ifstream &filename) {

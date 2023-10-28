@@ -14,7 +14,7 @@ class Class {
     double duration;
     string type;
     string classCode;
-    string uCcode;
+    string UcCode;
 public:
     Class();
     Class(string weekday_, double starthour_, double duration_, string type_, string classcode_, string uccode_);
@@ -33,6 +33,7 @@ public:
     void setClassCode(string classcode_);
     void setUcCode(string code);
 
+    bool operator<(const Class& other) const;
 };
 
 #endif //PROJETO_AED_1_CLASS_H

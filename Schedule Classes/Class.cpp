@@ -10,7 +10,7 @@ Class::Class(string weekday_, double starthour_, double duration_, string type_,
     this->duration = duration_;
     this->type = type_;
     this->classCode = classcode_;
-    this->uCcode = uccode_;
+    this->UcCode = uccode_;
 }
 
 Class::Class(const Class &class_) {
@@ -19,7 +19,7 @@ Class::Class(const Class &class_) {
     this->duration = class_.duration;
     this->type = class_.type;
     this->classCode = class_.classCode;
-    this->uCcode = class_.uCcode;
+    this->UcCode = class_.UcCode;
 }
 
 string Class::getWeekday() {
@@ -43,7 +43,7 @@ string Class::getClassCode() {
 }
 
 string Class::getUcCode() {
-    return this->uCcode;
+    return this->UcCode;
 }
 
 
@@ -61,12 +61,14 @@ void Class::setType(string type_) {
 }
 
 void Class::setUcCode(string code) {
-    this->uCcode = code;
+    this->UcCode = code;
 }
 
 void Class::setClassCode(string classcode_) {
     this->classCode = classcode_;
 }
 
-
+bool Class::operator<(const Class &other) const {
+    return this->UcCode < other.UcCode;
+}
 

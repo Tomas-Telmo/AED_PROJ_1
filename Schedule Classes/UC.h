@@ -29,6 +29,7 @@ public:
     void read_ClassesPerUCFile(ifstream &filename);
     void read_StudentsClassesFile(ifstream &filename);
 
+    bool operator<(const UC& other) const;
 };
 
 #endif //PROJETO_AED_1_UC_H
