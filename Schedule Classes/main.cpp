@@ -3,7 +3,7 @@
 #include <string>
 #include "UC.h"
 #include "StudentClass.h"
-#include "DataManager.h"
+#include "CSV.h"
 
 using namespace std;
 int main() {
@@ -47,12 +47,7 @@ int main() {
         }
     }
     */
-    DataManager dt = DataManager("","","/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/students_classes.csv");
-    int i=0;
-    for (auto t : dt.getStudents()) {
-        i++;
-        cout<<"up:"<<t.getCode()<<" nome:"<<t.getName()<<'\n';
-    }
-    cout<<i;
+
+
     return 0;
 }
