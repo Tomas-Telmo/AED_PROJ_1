@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/CSV.cpp.o"
+  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/CSV.cpp.o.d"
   "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o"
   "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o.d"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/DataManager.cpp.o"
-  "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/DataManager.cpp.o.d"
   "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o"
   "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o.d"
   "CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o"

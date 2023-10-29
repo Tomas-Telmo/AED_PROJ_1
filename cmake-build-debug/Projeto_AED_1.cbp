@@ -82,16 +82,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/CSV.cpp">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/CSV.h">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Class.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Class.h">
-			<Option target="Projeto_AED_1"/>
-		</Unit>
-		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/DataManager.cpp">
-			<Option target="Projeto_AED_1"/>
-		</Unit>
-		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/DataManager.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/Student.cpp">

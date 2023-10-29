@@ -159,7 +159,7 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o: \
  /usr/include/c++/11/bits/erase_if.h \
  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/StudentClass.h \
  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/Student.h \
- /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/DataManager.h \
+ /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/CSV.h \
  /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/Class.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_map.h \
