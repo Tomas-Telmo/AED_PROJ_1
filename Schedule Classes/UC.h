@@ -4,22 +4,25 @@
 #include <iostream>
 #include <string>
 #include <set>
+#include <list>
 #include "StudentClass.h"
 
 using namespace std;
 
 class UC{
     string UcCode;
-    set<StudentClass> UcClasses;
+    set<StudentClass> class_set;
+    list<StudentClass> class_list;
 
 public:
-    UC();
-    UC(string UcCode_, set<StudentClass> UcClasses_): UcCode(UcCode_), UcClasses(UcClasses_){};
+    //UC();
+    UC(string UcCode_, set<StudentClass> class_set, list<StudentClass> class_list);
     UC(UC const &uc);
 
-    string getUCCode();
-    set<StudentClass> getUcClasses();
-    int getNumberOfClasses();
+    string getUCCode() const;
+    set<StudentClass> getClassSet() const;
+    list<StudentClass> getClassList()const;
+    int getNumberOfClasses() const;
 
     void setUcCode(string uccode);
     void setUcClasses(set<StudentClass> UcClasses_);

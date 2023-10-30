@@ -18,11 +18,11 @@ set <Student> StudentClass::getStudents() const {
     return this->students;
 }
 
-string StudentClass::getCode() {
+string StudentClass::getCode() const {
     return this->code;
 }
 
-int StudentClass::getCapacity() {
+int StudentClass::getCapacity() const {
     return this->students.size();
 }
 
@@ -42,16 +42,14 @@ bool StudentClass::operator<(const StudentClass &other) const {
     return this->code < other.code;
 }
 
-/*
-void StudentClass::readFile(ifstream &filename, string class_code) {
+
+void StudentClass::readFile(ifstream &filename, string UCcode) {
     string dummy;
     string line;
     string student_code;
     string student_name;
-    string UCcode;
+    string FileUCcode;
     string FileClassCode;
-
-    this->code = class_code;
 
     if (!filename.is_open()) {
         cerr << "ERROR: Unable to open the file " << endl;
@@ -65,16 +63,16 @@ void StudentClass::readFile(ifstream &filename, string class_code) {
 
         getline(ss,student_code,',');
         getline(ss, student_name, ',');
-        getline(ss,dummy,',');
-        getline(ss,class_code,',');
+        getline(ss,FileUCcode,',');
+        getline(ss,FileClassCode);
 
-        if(code == class_code){
-            Student student(student_code,student_name);
-            students.insert(student);
-
+        if(FileUCcode == UCcode){
+            if(code == FileClassCode){
+                Student student(student_code,student_name);
+                students.insert(student);
+            }
         }
-
     }
-
+    filename.clear();
+    filename.seekg(0, ios::beg);
 }
- */

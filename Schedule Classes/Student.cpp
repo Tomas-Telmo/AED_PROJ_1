@@ -11,7 +11,7 @@ Student::Student(const Student &student) {
     this->name = student.name;
 }
 
-string Student::getCode() const {
+string Student::getCode() const{
     return this->code;
 }
 

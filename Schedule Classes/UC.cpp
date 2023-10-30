@@ -5,26 +5,33 @@
 #include <fstream>
 #include <string>
 
-UC::UC(string UcCode_, set<StudentClass> UcClasses_) {
+UC::UC(string UcCode_,set<StudentClass> class_set_, list<StudentClass> class_list_ ) {
     this->UcCode = UcCode_;
-    this->UcClasses = UcClasses_;
+    this->class_set = class_set_;
+    this->class_list = class_list_;
+
 }
 
 UC::UC(const UC &uc) {
-    this->UcClasses = uc.UcClasses;
+    this->class_set = uc.class_set;
     this->UcCode = uc.UcCode;
+    this->class_list = uc.class_list;
 }
 
-string UC::getUCCode() {
+string UC::getUCCode() const {
     return this->UcCode;
 }
 
-set<StudentClass> UC::getUcClasses() {
-    return this->UcClasses;
+set<StudentClass> UC::getClassSet() const {
+    return this->class_set;
 }
 
-int UC::getNumberOfClasses() {
-    return this->UcClasses.size();
+list<StudentClass> UC::getClassList() const {
+    return this->class_list;
+}
+
+int UC::getNumberOfClasses() const {
+    return this->class_set.size();
 }
 
 void UC::setUcCode(string uccode) {
@@ -32,17 +39,16 @@ void UC::setUcCode(string uccode) {
 }
 
 void UC::setUcClasses(set<StudentClass> UcClasses_) {
-    this->UcClasses = UcClasses_;
+    this->class_set = UcClasses_;
 }
 
 void UC::addStudentClass(StudentClass stdtClass) {
-    this->UcClasses.insert(stdtClass);
+    this->class_set.insert(stdtClass);
 }
 
 bool UC::operator<(const UC &other) const {
     return this->UcCode < other.UcCode;
 }
-
 
 //read file classes per uc -------> COMES FIRST!!!
 void UC::read_ClassesPerUCFile(ifstream &filename) {
@@ -64,7 +70,7 @@ void UC::read_ClassesPerUCFile(ifstream &filename) {
         getline(ss,class_code);
 
         if(UC_code == UcCode){
-            UcClasses.insert(StudentClass(class_code));
+            class_list.push_back(StudentClass(class_code,{}));
         }
 
     }
@@ -73,35 +79,13 @@ void UC::read_ClassesPerUCFile(ifstream &filename) {
 //read file student classes
 
 void UC::read_StudentsClassesFile(ifstream &filename) {
-    string dummy;
-    string line;
-    string student_code;
-    string student_name;
-    string UC_code;
-    string class_code;
+    auto it = class_list.begin();
 
-    if(!filename.is_open()){
-        cerr << "ERROR: Unable to open the file " << endl;
+    while (it != class_list.end()) {
+        StudentClass temp (*it);
+        temp.readFile(filename,UcCode);
+        class_set.insert(temp);
+        it++;
     }
 
-    getline(filename,dummy); //skip 1st line
-
-    while(getline(filename,line)){
-        stringstream ss(line);
-
-        getline(ss,student_code,',');
-        getline(ss, student_name, ',');
-        getline(ss,UC_code,',');
-        getline(ss,class_code);
-
-        if(UC_code == UcCode){
-            for(StudentClass stc : UcClasses ){
-                if(stc.getCode() == class_code){
-                    stc.addStudent(Student(student_code,student_name));
-                }
-            }
-        }
-
-    }
 }
-

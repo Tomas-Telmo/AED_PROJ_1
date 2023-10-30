@@ -61,13 +61,13 @@ map<string, set<StudentClass>> loadClassesperUCfromCSV(const string &file) { //s
         bool uc_already_in = false;
         for(auto p: UCclasses) {
             if (p.first==uccode) {
-                UCclasses[uccode].insert(StudentClass(classcode));
+               // UCclasses[uccode].insert(StudentClass(classcode));
                 uc_already_in = true;
             }
         }
-        if(!uc_already_in) {
-            UCclasses[uccode]={classcode};
-        }
+        //if(!uc_already_in) {
+        //    UCclasses[uccode]={classcode};
+        //}
 
     }
     return UCclasses;
