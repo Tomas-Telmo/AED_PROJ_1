@@ -7,44 +7,40 @@
 
 using namespace std;
 int main() {
-    ifstream classes_per_uc_file;
-    ifstream students_classes_file;
 
-    UC uc = UC("L.EIC002", {},{});
+    UC uc = UC("L.EIC001", {},{});
 
-    //read and parse 1st file-------------
-
-    classes_per_uc_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\classes_per_uc.csv");
-
-    if (!classes_per_uc_file.is_open()) {
-        cerr << "ERROR:CLASSES_PER_UC DIDNT OPEN" << std::endl;
-    }
-
-    uc.read_ClassesPerUCFile(classes_per_uc_file);
-    classes_per_uc_file.close();
-
-    //read and parse 2nd file------------
-
-    students_classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\students_classes.csv");
-
-    if (!students_classes_file.is_open()) {
-        cerr << "ERROR:STUDENTS_CLASSES DIDNT OPEN" << std::endl;
-    }
-
-    uc.read_StudentsClassesFile(students_classes_file);
-    students_classes_file.close();
-
+    uc.readClassesPerUCFile();
+    uc.readStudentsClassesFile();
     //-------------------------------
 
-    cout << uc.getClassSet().size()<<endl;
-    cout << uc.getClassList().size()<<endl;
+    cout << uc.getStudentClassSet().size()<<endl;
+    cout << uc.getStudentClassList().size()<<endl;
 
-    for(const auto& stc : uc.getClassSet()){
-        cout<< stc.getStudents().size()<<endl;  //funcemina
-        for(const auto& st : stc.getStudents()){
-            cout<< st.getCode()<<','<<st.getName()<<endl;
+    for(const auto& stc : uc.getStudentClassSet()){
+
+        cout<< "turma: "<< stc.getCode() << " tem "<< stc.getStudentSet().size() << " alunos" << endl;
+
+        for (auto c : stc.getScheduleList()) {
+            cout<<c.getUcCode()<<' '<<c.getWeekday()<<' '<<c.getStarthour()<<' '<< c.getType()<<'\n';
+
         }
+        //for(const auto& st : stc.getStudents()){
+        //   cout<< st.getCode()<<','<<st.getName()<<endl;
+        //}
+
     }
+    //--------------------------------------------------------------
+    //checkar se os schedules estao a ser feitos
+
+    /*
+    StudentClass sc = StudentClass("1LEIC08",{},{});
+    sc.readClassesFile();
+    for (Class c : sc.getScheduleList()) {
+        cout<<c.getUcCode()<<' '<<c.getWeekday()<<' '<<c.getStarthour()<<' '<< c.getType()<<'\n';
+    }
+    */
 
     return 0;
+
 }

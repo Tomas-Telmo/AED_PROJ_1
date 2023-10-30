@@ -7,31 +7,30 @@
 
 UC::UC(string UcCode_,set<StudentClass> class_set_, list<StudentClass> class_list_ ) {
     this->UcCode = UcCode_;
-    this->class_set = class_set_;
-    this->class_list = class_list_;
-
+    this->studentclassSet = class_set_;
+    this->studentclassList = class_list_;
 }
 
 UC::UC(const UC &uc) {
-    this->class_set = uc.class_set;
+    this->studentclassSet = uc.studentclassSet;
     this->UcCode = uc.UcCode;
-    this->class_list = uc.class_list;
+    this->studentclassList = uc.studentclassList;
 }
 
 string UC::getUCCode() const {
     return this->UcCode;
 }
 
-set<StudentClass> UC::getClassSet() const {
-    return this->class_set;
+set<StudentClass> UC::getStudentClassSet() const {
+    return this->studentclassSet;
 }
 
-list<StudentClass> UC::getClassList() const {
-    return this->class_list;
+list<StudentClass> UC::getStudentClassList() const {
+    return this->studentclassList;
 }
 
 int UC::getNumberOfClasses() const {
-    return this->class_set.size();
+    return this->studentclassSet.size();
 }
 
 void UC::setUcCode(string uccode) {
@@ -39,11 +38,11 @@ void UC::setUcCode(string uccode) {
 }
 
 void UC::setUcClasses(set<StudentClass> UcClasses_) {
-    this->class_set = UcClasses_;
+    this->studentclassSet = UcClasses_;
 }
 
 void UC::addStudentClass(StudentClass stdtClass) {
-    this->class_set.insert(stdtClass);
+    this->studentclassSet.insert(stdtClass);
 }
 
 bool UC::operator<(const UC &other) const {
@@ -51,40 +50,47 @@ bool UC::operator<(const UC &other) const {
 }
 
 //read file classes per uc -------> COMES FIRST!!!
-void UC::read_ClassesPerUCFile(ifstream &filename) {
+void UC::readClassesPerUCFile() {
+    ifstream classesPerUCFile;
+
+    classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\classes_per_uc.csv");
+
+    if(!classesPerUCFile.is_open()){
+        cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
+    }
+
     string dummy;
     string line;
     string UC_code;
     string class_code;
 
-    if(!filename.is_open()){
-        cerr << "ERROR: Couldn't open the file " << endl;
-    }
+    getline(classesPerUCFile, dummy); //skip 1st line
 
-    getline(filename,dummy); //skip 1st line
-
-    while(getline(filename,line)) {
+    while(getline(classesPerUCFile, line)) {
         stringstream ss(line);
 
         getline(ss,UC_code,',');
         getline(ss,class_code);
 
         if(UC_code == UcCode){
-            class_list.push_back(StudentClass(class_code,{}));
+            studentclassList.push_back(StudentClass(class_code, {},{}));
         }
 
     }
+
+    classesPerUCFile.close();
 }
 
 //read file student classes
 
-void UC::read_StudentsClassesFile(ifstream &filename) {
-    auto it = class_list.begin();
+void UC::readStudentsClassesFile() {
+    auto it = studentclassList.begin();
 
-    while (it != class_list.end()) {
+    while (it != studentclassList.end()) {
         StudentClass temp (*it);
-        temp.readFile(filename,UcCode);
-        class_set.insert(temp);
+        temp.readStudentsClassesFile(UcCode);
+        temp.readClassesFile();
+        studentclassSet.insert(temp);
         it++;
     }
 

@@ -11,8 +11,8 @@ using namespace std;
 
 class UC{
     string UcCode;
-    set<StudentClass> class_set;
-    list<StudentClass> class_list;
+    set<StudentClass> studentclassSet;
+    list<StudentClass> studentclassList;
 
 public:
     //UC();
@@ -20,8 +20,8 @@ public:
     UC(UC const &uc);
 
     string getUCCode() const;
-    set<StudentClass> getClassSet() const;
-    list<StudentClass> getClassList()const;
+    set<StudentClass> getStudentClassSet() const;
+    list<StudentClass> getStudentClassList()const;
     int getNumberOfClasses() const;
 
     void setUcCode(string uccode);
@@ -29,8 +29,10 @@ public:
 
     void addStudentClass(StudentClass Class);
 
-    void read_ClassesPerUCFile(ifstream &filename);
-    void read_StudentsClassesFile(ifstream &filename);
+    //void readClassesPerUCFile(ifstream &filename);
+    void readClassesPerUCFile();
+    //void readStudentsClassesFile(ifstream &filename);
+    void readStudentsClassesFile();
 
     bool operator<(const UC& other) const;
 };

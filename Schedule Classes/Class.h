@@ -1,6 +1,3 @@
-//
-// Created by antero on 26-10-2023.
-//
 
 #ifndef PROJETO_AED_1_CLASS_H
 #define PROJETO_AED_1_CLASS_H
@@ -33,7 +30,8 @@ public:
     void setClassCode(string classcode_);
     void setUcCode(string code);
 
-    bool operator<(const Class& other) const;
+    bool operator<(Class other) const;
+
 };
 
 #endif //PROJETO_AED_1_CLASS_H

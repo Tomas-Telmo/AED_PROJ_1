@@ -23,9 +23,6 @@ public:
     void setName(string name_);
 
     bool operator<(const Student& other)const;
-
-    string getStudentNameByCode(string code);
-    string getStudentCodeByName(string name);
 };
 
 

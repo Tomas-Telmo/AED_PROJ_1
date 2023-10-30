@@ -1,8 +1,6 @@
-//
-// Created by antero on 26-10-2023.
-//
 
 #include "Class.h"
+#include <map>
 
 Class::Class(string weekday_, double starthour_, double duration_, string type_, string classcode_, string uccode_) {
     this->weekday = weekday_;
@@ -68,7 +66,22 @@ void Class::setClassCode(string classcode_) {
     this->classCode = classcode_;
 }
 
-bool Class::operator<(const Class &other) const {
-    return this->UcCode < other.UcCode;
+bool Class::operator<(Class other) const {
+    map<string ,int> week;
+    week["Monday"]=1;
+    week["Tuesday"]=2;
+    week["Wednesday"]=3;
+    week["Thursday"]=4;
+    week["Friday"]=5;
+
+    // First, compare weekdays
+    if (week[weekday] < week[other.getWeekday()]) {
+        return true;
+    } else if (week[weekday] > week[other.getWeekday()]) {
+        return false;
+    } else {
+        // If weekdays are equal, compare start hours
+        return starthour < other.getStarthour();
+    }
 }
 
