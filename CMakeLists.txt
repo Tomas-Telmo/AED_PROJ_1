@@ -14,4 +14,7 @@ add_executable(Projeto_AED_1 "Schedule Classes/main.cpp"
         "Schedule Classes/Class.cpp"
         "Schedule Classes/CSV.cpp"
         "Schedule Classes/CSV.h"
+        "Schedule Classes/Menu.cpp"
+        "Schedule Classes/Menu.h"
+        "Schedule Classes/Menu.cpp"
 )

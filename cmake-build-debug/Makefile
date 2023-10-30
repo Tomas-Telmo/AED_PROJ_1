@@ -177,6 +177,30 @@ Schedule_Classes/Class.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.s
 .PHONY : Schedule_Classes/Class.cpp.s
 
+Schedule_Classes/Menu.o: Schedule_Classes/Menu.cpp.o
+.PHONY : Schedule_Classes/Menu.o
+
+# target to build an object file
+Schedule_Classes/Menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.o
+.PHONY : Schedule_Classes/Menu.cpp.o
+
+Schedule_Classes/Menu.i: Schedule_Classes/Menu.cpp.i
+.PHONY : Schedule_Classes/Menu.i
+
+# target to preprocess a source file
+Schedule_Classes/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.i
+.PHONY : Schedule_Classes/Menu.cpp.i
+
+Schedule_Classes/Menu.s: Schedule_Classes/Menu.cpp.s
+.PHONY : Schedule_Classes/Menu.s
+
+# target to generate assembly for a file
+Schedule_Classes/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.s
+.PHONY : Schedule_Classes/Menu.cpp.s
+
 Schedule_Classes/Student.o: Schedule_Classes/Student.cpp.o
 .PHONY : Schedule_Classes/Student.o
 
@@ -288,6 +312,9 @@ help:
 	@echo "... Schedule_Classes/Class.o"
 	@echo "... Schedule_Classes/Class.i"
 	@echo "... Schedule_Classes/Class.s"
+	@echo "... Schedule_Classes/Menu.o"
+	@echo "... Schedule_Classes/Menu.i"
+	@echo "... Schedule_Classes/Menu.s"
 	@echo "... Schedule_Classes/Student.o"
 	@echo "... Schedule_Classes/Student.i"
 	@echo "... Schedule_Classes/Student.s"

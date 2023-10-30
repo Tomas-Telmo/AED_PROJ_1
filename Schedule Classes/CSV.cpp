@@ -6,9 +6,9 @@
 
 
 
-set<Student> loadStudentsfromCSV(const string &file) {  //students_classes.csv
+set<Student> CSV::loadStudentsfromCSV() {  //students_classes.csv
     ifstream students_classes_file;
-    students_classes_file.open(file);
+    students_classes_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/students_classes.csv");
 
     string line;
     string student_code;
@@ -37,9 +37,9 @@ set<Student> loadStudentsfromCSV(const string &file) {  //students_classes.csv
 }
 
 
-map<string, set<StudentClass>> loadClassesperUCfromCSV(const string &file) { //set<uccode,classcode> from classes_per_uc.csv
+map<string, set<StudentClass>> CSV::loadClassesperUCfromCSV() { //set<uccode,classcode> from classes_per_uc.csv
     ifstream classes_per_uc_file;
-    classes_per_uc_file.open(file);
+    classes_per_uc_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/classes_per_uc.csv");
 
     map<string, set<StudentClass>> UCclasses;
     string line;
@@ -74,9 +74,9 @@ map<string, set<StudentClass>> loadClassesperUCfromCSV(const string &file) { //s
 }
 
 
-set<Class> loadClassesfromCSV(const string &file) {
+set<Class> CSV::loadClassesfromCSV() {
     ifstream classes_file;
-    classes_file.open(file);
+    classes_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/classes.csv");
 
     set<Class> Classes;
     string line;

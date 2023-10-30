@@ -167,4 +167,9 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o: \
  /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
  /usr/include/c++/11/bits/uses_allocator.h \
  /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/stl_multimap.h
+ /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule\ Classes/Menu.h
