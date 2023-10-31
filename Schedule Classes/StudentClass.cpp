@@ -163,7 +163,7 @@ void StudentClass::printSchedule() {
         }
     }
 
-    cout << "│  Back [1]                                   │\n"
+    cout << "│  Back [1]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
 }

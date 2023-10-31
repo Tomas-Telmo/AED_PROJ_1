@@ -4,6 +4,7 @@
 
 #ifndef PROJETO_AED_1_MENU_H
 #define PROJETO_AED_1_MENU_H
+#include <cstdlib>
 
 
 class Menu {

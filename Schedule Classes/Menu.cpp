@@ -10,12 +10,17 @@ void Menu::run() {
             "╞═════════════════════════════════════════════╡\n"
             "│  Schedules                              [1] │\n"
             "│  Edit                                   [2] │\n"
-            "│                    Quit                 [3] │\n"
+            "│                                    Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
 
     string cmd;
     getline(cin, cmd);
+    while(cmd!="1" && cmd!="2" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") cmd="3";
     int operation = stoi(cmd);
     switch (operation) {
         case 1:
@@ -23,6 +28,9 @@ void Menu::run() {
             break;
         case 2:
             cout<<"soon";                                               //TODO EDIT
+            break;
+        case 3:
+            quit();
             break;
     }
 }
@@ -37,11 +45,16 @@ void Menu::Schedules1() {
             "│  Search by Class                        [1] │\n"
             "│  Search by Student                      [2] │\n"
             "│                                             │\n"
-            "│  Back [3]                          Quit [4] │\n"
+            "│  Back [3]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
     getline(cin, cmd);
+    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") cmd="4";
     int operation = stoi(cmd);
     switch (operation) {
         case 1:
@@ -53,8 +66,9 @@ void Menu::Schedules1() {
         case 3:
             run();
             break;
-        case 4: quit();
-
+        case 4:
+            quit();
+            break;
     }
 }
 
@@ -66,9 +80,11 @@ void Menu::SearchByClass() {
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│            Type a Student Class             │\n"
+            "│                                             │\n"
             "│               (e.g: 2LEIC11)                │\n"
             "│      2-year    LEIC-course  11-classNum     │\n"
             "│                                             │\n"
+            "│                                    Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -77,6 +93,11 @@ void Menu::SearchByClass() {
     SC.readClassesFile();
     SC.printSchedule();
     getline(cin, cmd);
+    while(cmd!="1" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") cmd="2";
     int operation = stoi(cmd);
     switch (operation) {
         case 1:
@@ -99,11 +120,16 @@ void Menu::Searchbystudent() {
             "│   Use Name                              [2] │\n"
             "│                                             │\n"
             "│                                             │\n"
-            "│  Back [3]                          Quit [4] │\n"
+            "│   Back [3]                         Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
     getline(cin, cmd);
+    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") cmd="4";
     int operation = stoi(cmd);
 
     switch (operation) {
@@ -143,5 +169,4 @@ void Menu::Searchbystudent() {
 }
 
 void Menu::quit() {
-    cout << "quit is not available yet";
 }
