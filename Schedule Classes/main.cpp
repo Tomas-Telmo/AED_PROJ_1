@@ -3,11 +3,13 @@
 #include <string>
 #include "UC.h"
 #include "StudentClass.h"
-#include "CSV.h"
+
+
+
 
 using namespace std;
 int main() {
-
+/*
     UC uc = UC("L.EIC001", {},{});
 
     uc.readClassesPerUCFile();
@@ -29,17 +31,16 @@ int main() {
         //   cout<< st.getCode()<<','<<st.getName()<<endl;
         //}
 
-    }
+    }*/
     //--------------------------------------------------------------
     //checkar se os schedules estao a ser feitos
 
-    /*
-    StudentClass sc = StudentClass("1LEIC08",{},{});
+
+    StudentClass sc = StudentClass("3LEIC01",{},{});
     sc.readClassesFile();
-    for (Class c : sc.getScheduleList()) {
-        cout<<c.getUcCode()<<' '<<c.getWeekday()<<' '<<c.getStarthour()<<' '<< c.getType()<<'\n';
-    }
-    */
+    sc.printSchedule();
+
+
 
     return 0;
 

@@ -1,6 +1,9 @@
 #include <sstream>
 #include "StudentClass.h"
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <vector>
 
 
 
@@ -52,7 +55,7 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 
     ifstream students_classes_file;
 
-    students_classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\students_classes.csv");
+    students_classes_file.open("students_classes.csv", ios::in);
 
     if (!students_classes_file.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
@@ -89,7 +92,7 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 
 void StudentClass::readClassesFile() {
     ifstream classes_file;
-    classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\classes.csv");
+    classes_file.open("classes.csv");
 
     set<Class> Classes;
     string line;
@@ -133,17 +136,46 @@ void StudentClass::readClassesFile() {
 }
 
 void StudentClass::printSchedule() {
-    cout << "╒═════════════════════════════════════════════════════════╕\n"
-            "│                        Schedule                         │\n"
-            "╞═════════════════════════════════════════════════════════╡\n"
-            "│  Monday   Tuesday   Wednsday       Thursday     Friday  │\n"
-            "│                                                         │\n"
-            "│                                                         │\n"
-            "│                                                         │\n"
-            "│                                                         │\n"
-            "│                                                         │\n"
-            "│  Back [1]                                               │\n"
-            "╘═════════════════════════════════════════════════════════╛\n"
-            "                                                           \n";
+    cout << "╒══════════════════════════════════════════╕\n"
+            "│                Schedule                  │\n"
+            "╞══════════════════════════════════════════╡\n"
+            "│              Turma: "<<code<<"              │\n";
+
+    // Define the weekdays in the desired order
+    vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+
+    for (const string& weekday : weekdays) {
+        int len = 40-weekday.length();
+        cout << "│     " << weekday << " "<<setw(len)<<"│\n";
+
+        for (auto cls : scheduleList) {
+            if (cls.getWeekday() == weekday) {
+                string starthourstr = fromdoubletohour(cls.getStarthour());
+                string endhourstr = fromdoubletohour(cls.getStarthour()+cls.getDuration());
+                string hours = starthourstr + "-" + endhourstr;
+                int len2 = 10-cls.getUcCode().length();
+                int len3=15-hours.length();
+                cout << "│        " << cls.getUcCode()<<setw(len2)<< "  ";
+                cout<< hours<<setw(len3);
+                cout<<cls.getType()<<" "<<setw(11) <<"│"<<'\n';
+
+            }
+        }
+    }
+
+    cout << "│  Back [1]                                │\n"
+            "╘══════════════════════════════════════════╛\n"
+            "                                           \n";
 }
+
+string StudentClass::fromdoubletohour(double num) {
+    int hours = num/1;
+    int mins = (num - hours)*60;
+    if (mins!=0) {
+        return to_string(hours) + ":" + to_string(mins) ;
+    }
+    return to_string(hours) + ":00";
+
+}
+
 

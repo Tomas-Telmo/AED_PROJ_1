@@ -32,5 +32,7 @@ public:
     void readClassesFile();
 
     void printSchedule();
+
+    string fromdoubletohour(double num);
 };
 #endif //PROJETO_AED_1_STUDENTCLASS_H

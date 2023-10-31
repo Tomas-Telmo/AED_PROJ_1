@@ -53,7 +53,7 @@ bool UC::operator<(const UC &other) const {
 void UC::readClassesPerUCFile() {
     ifstream classesPerUCFile;
 
-    classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\projeto1-AED\\Schedule Classes\\classes_per_uc.csv");
+    classesPerUCFile.open("classes_per_uc.csv", ios::in);
 
     if(!classesPerUCFile.is_open()){
         cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
