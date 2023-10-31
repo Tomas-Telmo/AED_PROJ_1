@@ -90,7 +90,7 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
     students_classes_file.close();
 }
 
-void StudentClass::readClassesFile() {
+bool StudentClass::readClassesFile() {
     ifstream classes_file;
     classes_file.open("classes.csv");
 
@@ -102,6 +102,7 @@ void StudentClass::readClassesFile() {
     string type;
     string classCode;
     string UcCode;
+    bool found=false;
 
     if (!classes_file.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN CLASSES FILE" << endl;
@@ -129,10 +130,12 @@ void StudentClass::readClassesFile() {
             
             Class cl = Class(weekday, starthour, duration, type, classCode, UcCode);
             scheduleList.push_back(cl);
+            found =true;
         }
     }
     scheduleList.sort();
     classes_file.close();
+    return found;
 }
 
 void StudentClass::printSchedule() {

@@ -29,7 +29,7 @@ public:
     void addStudent(Student student);
     bool operator<( const StudentClass& other) const;
     void readStudentsClassesFile(string UCcode);
-    void readClassesFile();
+    bool readClassesFile();
 
     void printSchedule();
 

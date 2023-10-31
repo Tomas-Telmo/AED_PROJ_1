@@ -90,8 +90,11 @@ void Menu::SearchByClass() {
     string cmd;
     getline(cin, cmd);
     StudentClass SC = StudentClass(cmd, {}, {});
-    SC.readClassesFile();
+    if(SC.readClassesFile()){
     SC.printSchedule();
+    }else{
+        cout<< "Student Class not found.\n\nBack [1]\nQuit[q]\n";
+    }
     getline(cin, cmd);
     while(cmd!="1" && cmd!="q"){
         cout<<"Choose a valid option \n";
