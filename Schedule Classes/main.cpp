@@ -8,8 +8,11 @@
 
 using namespace std;
 int main() {
-    Menu menu = Menu();
-    menu.run();
+    CSV cs= CSV();
+    auto cl=cs.loadClassesperUCfromCSV();
+    for(auto i:cl){
+        cout<<i.first;
+    }
 
 
     return 0;

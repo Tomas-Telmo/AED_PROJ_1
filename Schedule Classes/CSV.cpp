@@ -8,7 +8,7 @@
 
 set<Student> CSV::loadStudentsfromCSV() {  //students_classes.csv
     ifstream students_classes_file;
-    students_classes_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/students_classes.csv");
+    students_classes_file.open("students_classes.csv",ios::in);
 
     string line;
     string student_code;
@@ -38,8 +38,8 @@ set<Student> CSV::loadStudentsfromCSV() {  //students_classes.csv
 
 
 map<string, set<StudentClass>> CSV::loadClassesperUCfromCSV() { //set<uccode,classcode> from classes_per_uc.csv
-    ifstream classes_per_uc_file;
-    classes_per_uc_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/classes_per_uc.csv");
+    fstream classes_per_uc_file;
+    classes_per_uc_file.open("classes_per_uc.csv", ios::in);
 
     map<string, set<StudentClass>> UCclasses;
     string line;
@@ -75,8 +75,8 @@ map<string, set<StudentClass>> CSV::loadClassesperUCfromCSV() { //set<uccode,cla
 
 
 set<Class> CSV::loadClassesfromCSV() {
-    ifstream classes_file;
-    classes_file.open("/home/antero/Desktop/FEUP_UBUNTO/AED/proj_aed_git/Schedule Classes/classes.csv");
+    fstream classes_file;
+    classes_file.open("classes.csv", ios::in);
 
     set<Class> Classes;
     string line;
