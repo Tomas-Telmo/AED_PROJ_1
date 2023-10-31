@@ -88,6 +88,12 @@
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule Classes/Class.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule Classes/Menu.cpp">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule Classes/Menu.h">
+			<Option target="Projeto_AED_1"/>
+		</Unit>
 		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule Classes/Student.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>

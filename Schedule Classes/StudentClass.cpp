@@ -136,17 +136,17 @@ void StudentClass::readClassesFile() {
 }
 
 void StudentClass::printSchedule() {
-    cout << "╒══════════════════════════════════════════╕\n"
-            "│                Schedule                  │\n"
-            "╞══════════════════════════════════════════╡\n"
-            "│              Turma: "<<code<<"              │\n";
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Schedule                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│               Turma: "<<code<<"                │\n";
 
     // Define the weekdays in the desired order
     vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 
     for (const string& weekday : weekdays) {
-        int len = 40-weekday.length();
-        cout << "│     " << weekday << " "<<setw(len)<<"│\n";
+        int len = 42-weekday.length();
+        cout << "│      " << weekday << " "<<setw(len)<<"│\n";
 
         for (auto cls : scheduleList) {
             if (cls.getWeekday() == weekday) {
@@ -155,7 +155,7 @@ void StudentClass::printSchedule() {
                 string hours = starthourstr + "-" + endhourstr;
                 int len2 = 10-cls.getUcCode().length();
                 int len3=15-hours.length();
-                cout << "│        " << cls.getUcCode()<<setw(len2)<< "  ";
+                cout << "│           " << cls.getUcCode()<<setw(len2)<< "  ";
                 cout<< hours<<setw(len3);
                 cout<<cls.getType()<<" "<<setw(11) <<"│"<<'\n';
 
@@ -163,8 +163,8 @@ void StudentClass::printSchedule() {
         }
     }
 
-    cout << "│  Back [1]                                │\n"
-            "╘══════════════════════════════════════════╛\n"
+    cout << "│  Back [1]                                   │\n"
+            "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
 }
 

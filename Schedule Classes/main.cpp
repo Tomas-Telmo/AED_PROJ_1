@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "UC.h"
-#include "StudentClass.h"
+#include "Menu.h"
 
 
 
@@ -32,15 +32,11 @@ int main() {
         //}
 
     }*/
+
     //--------------------------------------------------------------
-    //checkar se os schedules estao a ser feitos
 
-
-    StudentClass sc = StudentClass("3LEIC01",{},{});
-    sc.readClassesFile();
-    sc.printSchedule();
-
-
+    Menu menu;
+    menu.run();
 
     return 0;
 
