@@ -377,6 +377,8 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.o: /home/antero/Desktop/F
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
@@ -397,7 +399,18 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.o: /home/antero/Desktop/F
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /usr/include/c++/11/pstl/execution_defs.h
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/bits/quoted_string.h
 
 CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o: /home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule\ Classes/Student.cpp \
   /usr/include/stdc-predef.h \
@@ -1258,7 +1271,9 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o: /home/antero/Desktop/F
   /usr/include/c++/11/array \
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/stl_multimap.h
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc
 
 
 /home/antero/Desktop/FEUP_UBUNTO/AED/aed_project_master/Schedule\ Classes/UC.cpp:

@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 #include <algorithm>
-
+#include <iomanip>
 
 
 void Menu::run() {
@@ -226,7 +226,7 @@ void Menu::Students() {
             "│   Of a Class                            [1] │\n"
             "│   Of a Course                           [2] │\n"
             "│   Of a year                             [3] │\n"
-            "│  Minimum UC's                           [4] │\n"
+            "│   Minimum UC's                          [4] │\n"
             "│                                             │\n"
             "│   Back [5]                         Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
@@ -273,13 +273,19 @@ void Menu::OfAClass() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│             Type the student Class          │\n"
-            "│                (e.g:L.EIC021)               │\n"
+            "│            Type a Student Class             │\n"
             "│                                             │\n"
+            "│               (e.g: 2LEIC11)                │\n"
+            "│      2-year    LEIC-course  11-classNum     │\n"
+            "│                                             │\n"
+            "│                                    Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd2;
     getline(cin, cmd2);
+    StudentClass st = StudentClass(cmd2, {}, {});
+    st.loadStudentsofAClass(cmd);
+    st.printStudents(cmd);
 
 
 }
@@ -360,11 +366,13 @@ void Menu::CountByMinimumUC() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                Minimum Of UCs               │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│  At least "<<ans<<" students are                │\n"
-                                 "│  registered in the selected minimum UC's    │\n"
-                                 "│                                    Quit [q] │\n"
-                                 "╘═════════════════════════════════════════════╛\n"
-                                 "                                               \n";
+            "│  At least ";
+    cout<<ans<<setw(4-to_string(ans).length());
+cout<<" students are"<<"                  │\n"
+            "│  registered in the selected minimum UC's    │\n"
+            "│                                    Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
 
 }
 
