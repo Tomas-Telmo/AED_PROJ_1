@@ -32,7 +32,7 @@ int main() {
         //}
 
     }
-*/
+
     //--------------------------------------------------------------
 
     Student st = Student("", "Manuel Serafim");
@@ -45,7 +45,10 @@ int main() {
         cout<<p.getWeekday()<<p.getUcCode()<<'\n';
     }
     cout<<"\n\n\n\n\n";
-    st.printSchedule();
+    st.printSchedule();*/
+Menu menu;
+menu.run();
+
 
     return 0;
 

@@ -13,6 +13,8 @@ public:
     void Schedules1();
     void SearchByClass();
     void Searchbystudent();
+    void searchByStudentName();
+    void searchByStudentUP();
 
     void quit();
 };

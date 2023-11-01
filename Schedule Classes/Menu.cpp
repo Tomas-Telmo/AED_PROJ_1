@@ -127,6 +127,7 @@ void Menu::Searchbystudent() {
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
+
     getline(cin, cmd);
     while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
         cout<<"Choose a valid option \n";
@@ -137,30 +138,11 @@ void Menu::Searchbystudent() {
 
     switch (operation) {
         case 1:
-            cout << "╒═════════════════════════════════════════════╕\n"
-                    "│                  Schedules                  │\n"
-                    "╞═════════════════════════════════════════════╡\n"
-                    "│             Type the student UP             │\n"
-                    "│             to see his Schedule             │\n"
-                    "│               (e.g:202012345)               │\n"
-                    "│                                             │\n"
-                    "╘═════════════════════════════════════════════╛\n"
-                    "                                               \n";
-            getline(cin, cmd);
-            cout << "soon";                                             //TODO
+            searchByStudentUP();
+
             break;
         case 2:
-            cout << "╒═════════════════════════════════════════════╕\n"
-                    "│                  Schedules                  │\n"
-                    "╞═════════════════════════════════════════════╡\n"
-                    "│           Type the student Name to          │\n"
-                    "│               see his Schedule              │\n"
-                    "│     (Only use letters from the alphabet)    │\n"
-                    "│                                             │\n"
-                    "╘═════════════════════════════════════════════╛\n"
-                    "                                               \n";
-            getline(cin, cmd);
-            cout << "soon";                                             //TODO
+            searchByStudentName();
             break;
         case 3:
             Schedules1();
@@ -171,5 +153,57 @@ void Menu::Searchbystudent() {
     }
 }
 
+void Menu::searchByStudentName() {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Schedules                  │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│           Type the student Name to          │\n"
+            "│               see his Schedule              │\n"
+            "│     (Only use letters from the alphabet)    │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+    Student st1 = Student("",cmd);
+    st1.loadClassesperUCofStudentUsingNAME();
+    st1.loadSchedule();
+    st1.printSchedule();
+    getline(cin, cmd);
+    while(cmd!="1" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="1") Searchbystudent();
+    if(cmd=="q") quit();
+}
+
+void Menu::searchByStudentUP() {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Schedules                  │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│             Type the student UP             │\n"
+            "│             to see his Schedule             │\n"
+            "│               (e.g:202012345)               │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+    Student st1 = Student(cmd,"");
+    st1.getNameByUP();
+    st1.loadClassesperUCofStudentUsingNAME();
+    st1.loadSchedule();
+    st1.printSchedule();
+    getline(cin, cmd);
+    while(cmd!="1" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="1") Searchbystudent();
+    if(cmd=="q") quit();
+}
+
 void Menu::quit() {
+
 }

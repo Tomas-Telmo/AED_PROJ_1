@@ -28,10 +28,9 @@ public:
     void setCode(string code_);
     void setName(string name_);
 
-    void getNameByUC();
+    void getNameByUP();
 
     void loadClassesperUCofStudentUsingNAME(); //turmas e ucs inscritas
-    void loadClassesperUCofStudentUsingUP();    //turmas e ucs inscritas
 
     void loadSchedule();
     void printSchedule();
