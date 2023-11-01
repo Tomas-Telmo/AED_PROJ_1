@@ -25,6 +25,7 @@ public:
 
     void Students();
     void OfAClass();
+    void OfACourse();
 
     void quit();
 

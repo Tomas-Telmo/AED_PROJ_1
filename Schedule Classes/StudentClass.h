@@ -31,9 +31,11 @@ public:
     void readStudentsClassesFile(string UCcode);
     bool readClassesFile();
     void loadStudentsofAClass(string UCCode);
+    void loadStudentsofACourse(string course);
 
     void printSchedule();
-    void printStudents(string);
+    void printStudentsbyUCandClass(string UCcode);
+    void printStudentsbyCourse(string Course);
 
     string fromdoubletohour(double num);
 };

@@ -244,7 +244,7 @@ void Menu::Students() {
             OfAClass();
             break;
         case 2:
-            Students();
+            OfACourse();
             break;
         case 3:
             StudentsByYear();
@@ -262,7 +262,7 @@ void Menu::Students() {
 
 void Menu::OfAClass() {
     cout << "╒═════════════════════════════════════════════╕\n"
-            "│                  Schedules                  │\n"
+            "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│             Type the student UC             │\n"
             "│               (e.g:L.EIC021)                │\n"
@@ -272,7 +272,7 @@ void Menu::OfAClass() {
     string cmd;
     getline(cin, cmd);
     cout << "╒═════════════════════════════════════════════╕\n"
-            "│                  Schedules                  │\n"
+            "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│            Type a Student Class             │\n"
             "│                                             │\n"
@@ -286,7 +286,7 @@ void Menu::OfAClass() {
     getline(cin, cmd2);
     StudentClass st = StudentClass(cmd2, {}, {});
     st.loadStudentsofAClass(cmd);
-    st.printStudents(cmd);
+    st.printStudentsbyUCandClass(cmd);
 
 
 }
@@ -314,7 +314,7 @@ void Menu::CountByMinimumUC() {
         cout<<"Choose a valid number: \n";
         getline(cin, cmd);
     }
-    if(cmd=="2") quit();
+    if(cmd=="q") quit();
     int minimum = stoi(cmd);
 
     //get students
@@ -367,13 +367,29 @@ void Menu::CountByMinimumUC() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                Minimum Of UCs               │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│  At least ";
-    cout<<ans<<setw(4-to_string(ans).length());
-cout<<" students are"<<"                  │\n"
+            "│  At least "<<ans<<" students are                  "<<"│\n"
             "│  registered in the selected minimum UC's    │\n"
             "│                                    Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
+
+}
+
+void Menu::OfACourse() {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Students                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│           Type the student Course           │\n"
+            "│              (e.g:LEIC, LEM)                │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+    StudentClass st = StudentClass("", {}, {});
+    st.loadStudentsofACourse(cmd);
+    st.printStudentsbyCourse(cmd);
+
 
 }
 

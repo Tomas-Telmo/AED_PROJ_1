@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G "CodeBlocks - Unix Makefiles" -S /Users/hugocruz/Desktop/FEUP/AED/Projeto-master -B /Users/hugocruz/Desktop/FEUP/AED/Projeto-master/cmake-build-default
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/hugocruz/Desktop/FEUP/AED/Projeto-master/cmake-build-default

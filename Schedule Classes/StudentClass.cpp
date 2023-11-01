@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iomanip>
 #include <vector>
-
+#include <string>
 
 
 StudentClass::StudentClass(string code_, set<Student> studentSet_, list<Class> scheduleList_){
@@ -216,11 +216,63 @@ string StudentClass::fromdoubletohour(double num) {
 
 }
 
-void StudentClass::printStudents(string UCcode) {
+void StudentClass::printStudentsbyUCandClass(string UCcode) {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│      Turma: "<<code<<"    UC:"<<UCcode<< "          │\n";
+
+
+    for (Student st : studentSet) {
+
+        cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
+
+    }
+
+    cout << "│  Back [1]                          Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                           \n";
+}
+
+void StudentClass::loadStudentsofACourse(string course) {
+    ifstream fileSC;                                    //of a student
+    fileSC.open("students_classes.csv");
+
+    if (!fileSC.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+
+    string line;
+    string student_code;
+    string student_name;
+    string UCcode;
+    string ClassCode;
+
+
+    getline(fileSC,line); //skip 1st line
+
+    while(getline(fileSC,line)){
+        stringstream ss(line);
+
+        getline(ss,student_code,',');
+        getline(ss, student_name, ',');
+        getline(ss,UCcode,',');
+        getline(ss,ClassCode);
+
+        if (ClassCode.find(course) != string::npos) {
+            studentSet.insert(Student(student_code,student_name));
+        }
+
+    }
+    fileSC.close();
+}
+
+void StudentClass::printStudentsbyCourse(string Course) {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Students                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│                Course: "<<Course<< "                 │\n";
 
 
     for (Student st : studentSet) {
