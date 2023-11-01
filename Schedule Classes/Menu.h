@@ -5,7 +5,10 @@
 #ifndef PROJETO_AED_1_MENU_H
 #define PROJETO_AED_1_MENU_H
 #include <cstdlib>
-
+#include <list>
+#include "UC.h"
+#include <map>
+#include <sstream>
 
 class Menu {
 public:
@@ -15,8 +18,14 @@ public:
     void Searchbystudent();
     void searchByStudentName();
     void searchByStudentUP();
+    void CountByMinimumUC();
+
+
+    void Students();
+    void OfAClass();
 
     void quit();
+
 };
 
 

@@ -76,6 +76,8 @@ void Student::getNameByUP() {
     fileSC.close();
 }
 
+
+
 void Student::loadClassesperUCofStudentUsingNAME() {    //creates a list of pairs <uccode, classcode>
     ifstream fileSC;                                    //of a student
     fileSC.open("students_classes.csv");
@@ -101,6 +103,8 @@ void Student::loadClassesperUCofStudentUsingNAME() {    //creates a list of pair
         getline(ss, student_name, ',');
         getline(ss,UCcode,',');
         getline(ss,ClassCode);
+
+
 
         if(name == student_name){
             UCandClasses.push_back(pair(UCcode, ClassCode));

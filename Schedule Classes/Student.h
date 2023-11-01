@@ -5,6 +5,7 @@
 #include <string>
 #include <list>
 #include "Class.h"
+#include <set>
 
 
 using namespace std;
@@ -14,6 +15,7 @@ class Student {
     string name;
     list<pair<string,string>> UCandClasses;
     list<Class> schedule;
+
 
 public:
     //Student();

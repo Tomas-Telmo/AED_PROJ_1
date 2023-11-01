@@ -30,8 +30,10 @@ public:
     bool operator<( const StudentClass& other) const;
     void readStudentsClassesFile(string UCcode);
     bool readClassesFile();
+    void loadStudentsofAClass(string UCCode);
 
     void printSchedule();
+    void printStudents(string);
 
     string fromdoubletohour(double num);
 };
