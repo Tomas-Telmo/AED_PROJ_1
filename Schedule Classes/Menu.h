@@ -9,6 +9,7 @@
 #include "UC.h"
 #include <map>
 #include <sstream>
+#include <string>
 
 class Menu {
 public:
@@ -19,6 +20,7 @@ public:
     void searchByStudentName();
     void searchByStudentUP();
     void CountByMinimumUC();
+    void StudentsByYear();
 
 
     void Students();

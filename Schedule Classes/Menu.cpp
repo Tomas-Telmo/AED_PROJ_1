@@ -247,6 +247,7 @@ void Menu::Students() {
             Students();
             break;
         case 3:
+            StudentsByYear();
 
             break;
         case 4:
@@ -374,5 +375,93 @@ cout<<" students are"<<"                  │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
 
+}
+
+void Menu::StudentsByYear() {
+    for (int i = 0; i < 50; i++) {
+        cout << '\n';
+    }
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                   Students                  │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│             Type the year you want          │\n"
+            "│                   to check                  │\n"
+            "│                                             │\n"
+            "│                                    Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n";
+
+    string cmd;
+    int year;
+    getline(cin, cmd);
+    if (cmd=="q") quit();
+    try{
+        year=stoi(cmd);
+    }catch(invalid_argument){
+        CountByMinimumUC();
+    }
+    while(stoi(cmd)<0){
+        cout<<"Choose a valid year: \n";
+        getline(cin, cmd);
+    }
+    //get students
+    ifstream students_classes_file;
+
+    students_classes_file.open("students_classes.csv", ios::in);
+
+    if (!students_classes_file.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+
+    string dummy;
+    string line;
+    string student_code;
+    string student_name;
+    string FileUCcode;
+    string FileClassCode;
+    set <Student> students;
+
+    getline(students_classes_file,dummy); //skip 1st line
+
+    while(getline(students_classes_file,line)){
+        stringstream ss(line);
+
+        getline(ss,student_code,',');
+        getline(ss, student_name, ',');
+        getline(ss,FileUCcode,',');
+        getline(ss,FileClassCode);
+        Student stu = Student(student_code,student_name);
+        if(year == int(FileClassCode[0])-48){
+            students.insert(stu);
+        }
+    }
+    students_classes_file.close();
+
+
+    for (int i = 0; i < 50; i++) {
+        cout << '\n';
+    }
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Students                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│      Year: "<<year<<"                                │\n";
+
+
+    for (Student st : students) {
+
+        cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
+
+    }
+
+    cout << "│  Back [1]                          Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                           \n";
+    getline(cin, cmd);
+    while(cmd!="1" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") quit();
+    if (cmd=="1") run();
 }
 
