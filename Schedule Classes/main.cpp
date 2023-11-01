@@ -31,13 +31,23 @@ int main() {
         //   cout<< st.getCode()<<','<<st.getName()<<endl;
         //}
 
-    }*/
+    }
 
     //--------------------------------------------------------------
 
+    Student st = Student("", "Manuel Serafim");
+    st.loadClassesperUCofStudentUsingNAME();
+    for(auto p:st.getUCandClasses()) {
+        cout<<p.first<<p.second<<'\n';
+    }
+    st.loadSchedule();
+    for(auto p:st.getSchedule()) {
+        cout<<p.getWeekday()<<p.getUcCode()<<'\n';
+    }
+    cout<<"\n\n\n\n\n";
+    st.printSchedule();*/
     Menu menu;
     menu.run();
-
     return 0;
 
 }
