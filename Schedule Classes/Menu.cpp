@@ -13,15 +13,17 @@ void Menu::run() {
             "│                    Menu                     │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│  Schedules                              [1] │\n"
-            "│  Edit                                   [2] │\n"
-            "│  Students                               [3] │\n"
+            "│  Students                               [2] │\n"
+            "│  UC with the most students              [3] │\n"
+            "│  Edit                                   [4] │\n"
             "│                                    Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
 
     string cmd;
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
+    if (cmd=="q") quit();
+    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="4"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -32,13 +34,13 @@ void Menu::run() {
             Schedules1();
             break;
         case 2:
-            cout<<"soon";                                               //TODO EDIT
-            break;
-        case 3:
             Students();
             break;
-        case 5:
-            quit();
+        case 3:
+            BiggestUC();
+            break;
+        case 4:
+            cout<<"soon";                                               //TODO EDIT
             break;
     }
 }
@@ -479,5 +481,77 @@ void Menu::StudentsByYear() {
     }
     if(cmd=="q") quit();
     if (cmd=="1") run();
+}
+
+void Menu::BiggestUC() {
+    int max=0;
+    set<string> ansUCCode;
+
+    //get UC's
+    ifstream students_classes_file;
+
+    students_classes_file.open("students_classes.csv", ios::in);
+
+    if (!students_classes_file.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+
+    string dummy;
+    string line;
+    string student_code;
+    string student_name;
+    string FileUCcode;
+    string FileClassCode;
+    map <string,int> UCs;
+
+    getline(students_classes_file,dummy); //skip 1st line
+
+    while(getline(students_classes_file,line)){
+        stringstream ss(line);
+
+        getline(ss,student_code,',');
+        getline(ss, student_name, ',');
+        getline(ss,FileUCcode,',');
+        getline(ss,FileClassCode);
+        Student stu = Student(student_code,student_name);
+        if(UCs.find(FileUCcode)==UCs.end()){
+            UCs[FileUCcode]=0;
+        }
+        else{
+            UCs[FileUCcode]=UCs[FileUCcode]+1;
+        }
+    }
+    students_classes_file.close();
+    for(auto p : UCs){
+        if(p.second>max){
+            ansUCCode.clear();
+            ansUCCode.insert(p.first);
+            max=p.second;
+        }
+        else if (p.second==max){
+            ansUCCode.insert(p.first);
+        }
+    }
+
+    for (int i = 0; i < 50; i++) {
+        cout << '\n';
+    }
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Students                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│      UC's with the most students            │\n";
+
+
+    for (string UCc : ansUCCode) {
+
+        cout << "│     "<<UCc<<"                                |\n";
+
+    }
+
+    cout << "│  Back [1]                          Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                           \n";
+
 }
 

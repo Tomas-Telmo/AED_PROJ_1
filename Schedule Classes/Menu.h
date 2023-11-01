@@ -21,6 +21,7 @@ public:
     void searchByStudentUP();
     void CountByMinimumUC();
     void StudentsByYear();
+    void BiggestUC();
 
 
     void Students();
