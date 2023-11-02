@@ -96,8 +96,7 @@ void Menu::UCperYear(const std::string& year) {
 
     ifstream classesPerUCFile;
 
-    //classesPerUCFile.open("classes_per_uc.csv", ios::in);
-    classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
+    classesPerUCFile.open("classes_per_uc.csv", ios::in);
 
     if (!classesPerUCFile.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
@@ -158,13 +157,17 @@ void Menu::UCperYear(const std::string& year) {
     if (cmd=="0") LookThroughDataBase();
 
     bool flag = false;
-    for(string uccode : UCcode_set){
-        if(cmd == uccode ){
-            flag = true;
-        }
 
-    }
-    if(!flag){
+    while(cmd!="0" && cmd!="q" && !flag){
+
+        for(string uccode : UCcode_set) {
+            if (cmd == uccode) {
+                flag = true;
+                break;
+            }
+        }
+        if(flag) break;
+
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -207,7 +210,8 @@ void Menu::ClassesPerUC(UC uc,string year) {
     getline(cin, cmd);
 
     if(cmd=="q") quit();
-    if (cmd=="0") UCperYear(year);
+    else if (cmd=="0") UCperYear(year);
+
 
     bool flag = false;
     for(auto classcode : uc.getStudentClassSet()){
@@ -272,6 +276,12 @@ void Menu::classSchedule(std::string classcode, UC uc, std::string year) {
 
     if(cmd=="q") quit();
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
+
+    while(cmd!="0" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+
 }
 
 
@@ -281,24 +291,28 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     for(auto stc: uc.getStudentClassSet()) {
         if(stc.getCode() == classcode){
-            students = stc.getStudentSet();
+            for(auto& student : stc.getStudentSet()){
+                students.insert(student);
+            }
             break;
+        }
     }
 
 
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│                                             │\n";
+            "│      NOME                       UP          │\n";
 
 
-    for (Student st : students) {
+    for (auto& st : students) {
 
         cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
 
     }
 
-    cout << "│  Back [0]                          Quit [q] │\n"
+    cout << "│                                             │\n"
+            "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
@@ -311,7 +325,7 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     if(cmd=="q") quit();
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
-}
+
 }
 
 //-----------------------------------------QUICK-SEARCH----------------------------------------------------------------------

@@ -56,8 +56,8 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 
     ifstream students_classes_file;
 
-    //students_classes_file.open("students_classes.csv", ios::in);
-    students_classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\students_classes.csv");
+    students_classes_file.open("students_classes.csv", ios::in);
+    //students_classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\students_classes.csv");
 
     if (!students_classes_file.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
@@ -95,8 +95,8 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 bool StudentClass::readClassesFile() {
     ifstream classes_file;
 
-    //classes_file.open("classes.csv");
-    classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes.csv");
+    classes_file.open("classes.csv");
+    //classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes.csv");
 
     set<Class> Classes;
     string line;
