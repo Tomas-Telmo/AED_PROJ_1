@@ -289,7 +289,7 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│  NOME                              UP       │\n";
+            "│      NAME                UP                 │\n";
 
 
     for (Student st : students) {
@@ -322,14 +322,15 @@ void Menu::QuickSearchDatabase() {
             "│                Quick Search                 │\n"
             "╞═════════════════════════════════════════════╡\n"
             "│  Get schedule                           [1] │\n"
-            "│                                             │\n"
+            "│  UC with the gretest number of students [2] │\n"
+            "│  Students registered in at least n UCs  [3] │\n"
             "│                                             │\n"
             "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
     getline(cin, cmd);
-    while (cmd != "1" && cmd != "0" && cmd != "q") {
+    while (cmd != "1" && cmd != "0" && cmd !="2" && cmd != "3" && cmd != "q") {
         cout << "Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -337,14 +338,17 @@ void Menu::QuickSearchDatabase() {
     if (cmd == "q") cmd = "4";
     int operation = stoi(cmd);
     switch (operation) {
+        case 0:
+            run();
+            break;
         case 1:
             Schedules1();
             break;
         case 2:
-            //todo maybe add more like uc min
+            BiggestUC();
             break;
-        case 0:
-            run();
+        case 3:
+            CountByMinimumUC();
             break;
         case 4:
             quit();
@@ -608,7 +612,7 @@ void Menu::CountByMinimumUC() {
             "╞═════════════════════════════════════════════╡\n"
             "│  Choose the minimum:                        │\n"
             "│                                             │\n"
-            "│                                    Quit [q] │\n"
+            "│                                   >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -677,10 +681,16 @@ void Menu::CountByMinimumUC() {
             "╞═════════════════════════════════════════════╡\n"
             "│  At least "<<ans<<" students are                  "<<"│\n"
             "│  registered in the selected minimum UC's    │\n"
-            "│                                    Quit [q] │\n"
+            "│  >Back[0]                         >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
-
+    getline(cin, cmd);
+    while(cmd!="0" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="0")QuickSearchDatabase();
+    else if(cmd=="q")quit();
 }
 
 void Menu::OfACourse() {
@@ -843,28 +853,29 @@ void Menu::BiggestUC() {
         cout << '\n';
     }
     cout << "╒═════════════════════════════════════════════╕\n"
-            "│                  Students                   │\n"
+            "│    UC with the gretest number of students   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│      UC's with the most students            │\n";
+            "│                                             │\n";
 
 
     for (string UCc : ansUCCode) {
 
-        cout << "│     "<<UCc<<"                                |\n";
+        cout << "│     "<<UCc<<"                                │\n";
 
     }
 
-    cout << "│  Back [1]                          Quit [q] │\n"
+    cout << "│                                             │\n"
+            "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="q"){
+    while(cmd!="0" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
     if(cmd=="q") quit();
-    if (cmd=="0") run();
+    if (cmd=="0") QuickSearchDatabase();
 
 }
 

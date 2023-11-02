@@ -47,8 +47,8 @@ int main() {
     cout<<"\n\n\n\n\n";
     st.printSchedule();*/
 
-    Menu mmmm=Menu();
-    mmmm.run();
+    Menu menu=Menu();
+    menu.run();
     return 0;
 
 }
