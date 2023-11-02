@@ -471,7 +471,13 @@ CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.obj: C:/Users/Utilizad
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
-  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h
+  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
+  C:/Users/Utilizador/OneDrive/Ambiente\ de\ Trabalho/code/CLion\ stuff/PROJETO\ AED1/Schedule\ Classes/Menu.h \
+  C:/Users/Utilizador/OneDrive/Ambiente\ de\ Trabalho/code/CLion\ stuff/PROJETO\ AED1/Schedule\ Classes/UC.h \
+  C:/Users/Utilizador/OneDrive/Ambiente\ de\ Trabalho/code/CLion\ stuff/PROJETO\ AED1/Schedule\ Classes/StudentClass.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h
 
 CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.obj: C:/Users/Utilizador/OneDrive/Ambiente\ de\ Trabalho/code/CLion\ stuff/PROJETO\ AED1/Schedule\ Classes/StudentClass.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \

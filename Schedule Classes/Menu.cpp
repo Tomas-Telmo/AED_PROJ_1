@@ -280,16 +280,16 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
     set <Student> students;
 
     for(auto stc: uc.getStudentClassSet()) {
-        if(stc.getCode() == classcode){
+        if (stc.getCode() == classcode) {
             students = stc.getStudentSet();
             break;
+        }
     }
-
 
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│                                             │\n";
+            "│  NOME                              UP       │\n";
 
 
     for (Student st : students) {
@@ -298,7 +298,8 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     }
 
-    cout << "│  Back [0]                          Quit [q] │\n"
+    cout << "│                                             │\n"
+            "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
@@ -311,7 +312,7 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     if(cmd=="q") quit();
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
-}
+
 }
 
 //-----------------------------------------QUICK-SEARCH----------------------------------------------------------------------
