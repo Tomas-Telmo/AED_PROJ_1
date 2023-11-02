@@ -16,6 +16,7 @@ StudentClass::StudentClass(string code_, set<Student> studentSet_, list<Class> s
 StudentClass::StudentClass(const StudentClass &studentclass) {
     this->code = studentclass.code;
     this->studentSet = studentclass.studentSet;
+    this->scheduleList = studentclass.scheduleList;
 }
 
 set <Student> StudentClass::getStudentSet() const {
@@ -55,7 +56,8 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 
     ifstream students_classes_file;
 
-    students_classes_file.open("students_classes.csv", ios::in);
+    //students_classes_file.open("students_classes.csv", ios::in);
+    students_classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\students_classes.csv");
 
     if (!students_classes_file.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
@@ -92,7 +94,9 @@ void StudentClass::readStudentsClassesFile(string UCcode) {
 
 bool StudentClass::readClassesFile() {
     ifstream classes_file;
-    classes_file.open("classes.csv");
+
+    //classes_file.open("classes.csv");
+    classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes.csv");
 
     set<Class> Classes;
     string line;
@@ -201,7 +205,7 @@ void StudentClass::printSchedule() {
         }
     }
 
-    cout << "│  Back [1]                          Quit [q] │\n"
+    cout << "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
 }

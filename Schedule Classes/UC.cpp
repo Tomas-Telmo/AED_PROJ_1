@@ -53,10 +53,11 @@ bool UC::operator<(const UC &other) const {
 void UC::readClassesPerUCFile() {
     ifstream classesPerUCFile;
 
-    classesPerUCFile.open("classes_per_uc.csv", ios::in);
+    //classesPerUCFile.open("classes_per_uc.csv", ios::in);
+    classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
 
     if(!classesPerUCFile.is_open()){
-        cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
+        cerr << "ERROR: UNABLE TO OPEN CLASSES PER UC FILE " << endl;
     }
 
     string dummy;
@@ -96,4 +97,10 @@ void UC::readStudentsClassesFile() {
 
 }
 
+//make
+
+void UC::Make() {
+    this->readClassesPerUCFile();
+    this->readStudentsClassesFile();
+}
 

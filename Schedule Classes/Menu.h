@@ -13,7 +13,10 @@
 
 class Menu {
 public:
+    void skiplines();
     void run();
+
+    void QuickSearchDatabase();
     void Schedules1();
     void SearchByClass();
     void Searchbystudent();
@@ -23,10 +26,20 @@ public:
     void StudentsByYear();
     void BiggestUC();
 
+    void Edit();
 
     void Students();
     void OfAClass();
     void OfACourse();
+
+
+
+    void LookThroughDataBase();
+    void UCperYear(const string& year);
+    void ClassesPerUC(UC uc, string year);
+    void scheduleORstudents(string classcode, UC uc, string year);
+    void classSchedule(string classcode, UC uc, string year);
+    void classStudentList(string classcode, UC uc, string year);
 
     void quit();
 

@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/main.cpp.o CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Student.cpp.o CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/StudentClass.cpp.o CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/UC.cpp.o CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Class.cpp.o CMakeFiles/Projeto_AED_1.dir/Schedule_Classes/Menu.cpp.o -o Projeto_AED_1 
+"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Projeto_AED_1.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\Projeto_AED_1.dir/objects.a @CMakeFiles\Projeto_AED_1.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Projeto_AED_1.dir/objects.a -Wl,--no-whole-archive -o Projeto_AED_1.exe -Wl,--out-implib,libProjeto_AED_1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Projeto_AED_1.dir\linkLibs.rsp

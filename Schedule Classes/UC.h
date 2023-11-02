@@ -30,11 +30,9 @@ public:
 
     void addStudentClass(StudentClass Class);
 
-    //void readClassesPerUCFile(ifstream &filename);
     void readClassesPerUCFile();
-    //void readStudentsClassesFile(ifstream &filename);
     void readStudentsClassesFile();
-
+    void Make();
     bool operator<(const UC& other) const;
 };
 
