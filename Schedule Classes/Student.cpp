@@ -2,8 +2,9 @@
 #include <sstream>
 #include <iomanip>
 #include <vector>
+#include <stdlib.h>
 #include "Student.h"
-
+#include "Menu.h"
 
 Student::Student(string code_, string name_) {
     this->code = code_;
@@ -86,7 +87,7 @@ void Student::loadClassesperUCofStudentUsingNAME() {    //creates a list of pair
         cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
         return;
     }
-
+    bool found=false;
     string line;
     string student_code;
     string student_name;
@@ -108,7 +109,11 @@ void Student::loadClassesperUCofStudentUsingNAME() {    //creates a list of pair
 
         if(name == student_name){
             UCandClasses.push_back(pair(UCcode, ClassCode));
+            found= true;
         }
+    }
+    if(!found){
+        this->name="-1";
     }
     fileSC.close();
 }
@@ -186,10 +191,11 @@ void Student::printSchedule() {
         }
     }
 
-    cout << "│  Back [1]                          Quit [q] │\n"
+    cout << "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
 }
+
 
 string Student::fromdoubletohour(double num) {
     int hours = num/1;

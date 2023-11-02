@@ -97,6 +97,7 @@ void Menu::UCperYear(const std::string& year) {
     ifstream classesPerUCFile;
 
     classesPerUCFile.open("classes_per_uc.csv", ios::in);
+    //classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
 
     if (!classesPerUCFile.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
@@ -157,17 +158,13 @@ void Menu::UCperYear(const std::string& year) {
     if (cmd=="0") LookThroughDataBase();
 
     bool flag = false;
-
-    while(cmd!="0" && cmd!="q" && !flag){
-
-        for(string uccode : UCcode_set) {
-            if (cmd == uccode) {
-                flag = true;
-                break;
-            }
+    for(string uccode : UCcode_set){
+        if(cmd == uccode ){
+            flag = true;
         }
-        if(flag) break;
 
+    }
+    if(!flag){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -210,8 +207,7 @@ void Menu::ClassesPerUC(UC uc,string year) {
     getline(cin, cmd);
 
     if(cmd=="q") quit();
-    else if (cmd=="0") UCperYear(year);
-
+    if (cmd=="0") UCperYear(year);
 
     bool flag = false;
     for(auto classcode : uc.getStudentClassSet()){
@@ -276,12 +272,6 @@ void Menu::classSchedule(std::string classcode, UC uc, std::string year) {
 
     if(cmd=="q") quit();
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
-
-    while(cmd!="0" && cmd!="q"){
-        cout<<"Choose a valid option \n";
-        getline(cin, cmd);
-    }
-
 }
 
 
@@ -291,28 +281,24 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     for(auto stc: uc.getStudentClassSet()) {
         if(stc.getCode() == classcode){
-            for(auto& student : stc.getStudentSet()){
-                students.insert(student);
-            }
+            students = stc.getStudentSet();
             break;
-        }
     }
 
 
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│      NOME                       UP          │\n";
+            "│                                             │\n";
 
 
-    for (auto& st : students) {
+    for (Student st : students) {
 
         cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
 
     }
 
-    cout << "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+    cout << "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
@@ -325,7 +311,7 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
 
     if(cmd=="q") quit();
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
-
+}
 }
 
 //-----------------------------------------QUICK-SEARCH----------------------------------------------------------------------
@@ -419,23 +405,16 @@ void Menu::SearchByClass() {
     if(SC.readClassesFile()){
         SC.printSchedule();
     }else{
-        cout<< "Student Class not found.\n\nBack [1]\nQuit[q]\n";
+        cout<< "Student Class not found.\n\nBack [0]\nQuit[q]\n";
     }
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="q"){
+    while(cmd!="0" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
-    if(cmd=="q") cmd="2";
-    int operation = stoi(cmd);
-    switch (operation) {
-        case 1:
-            Schedules1();
-            break;
-        case 2:
-            quit();
-            break;
-    }
+
+    if(cmd=="q") quit();
+    if (cmd=="0") Schedules1();
 }
 
 void Menu::Searchbystudent() {
@@ -448,17 +427,17 @@ void Menu::Searchbystudent() {
             "│   Use Name                              [2] │\n"
             "│                                             │\n"
             "│                                             │\n"
-            "│   Back [3]                         Quit [q] │\n"
+            "│   Back [0]                         Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
 
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
+    while(cmd!="1" && cmd!="2" && cmd!="0" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
-    if(cmd=="q") cmd="4";
+    if(cmd=="q") quit();
     int operation = stoi(cmd);
 
     switch (operation) {
@@ -469,13 +448,14 @@ void Menu::Searchbystudent() {
         case 2:
             searchByStudentName();
             break;
-        case 3:
+        case 0:
             Schedules1();
             break;
-        case 4:
-            quit();
-            break;
     }
+    getline(cin, cmd);
+
+    if(cmd=="q") quit();
+    if (cmd=="0") Searchbystudent();
 }
 
 void Menu::searchByStudentName() {
@@ -492,14 +472,19 @@ void Menu::searchByStudentName() {
     getline(cin, cmd);
     Student st1 = Student("",cmd);
     st1.loadClassesperUCofStudentUsingNAME();
+    if(st1.getName()!="-1"){
     st1.loadSchedule();
     st1.printSchedule();
+    }
+    else{
+        cout<<"Student not found\n>Back[0]\n>Quit[q]";
+    }
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="q"){
+    while(cmd!="0" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
-    if(cmd=="1") Searchbystudent();
+    if(cmd=="0") Schedules1();
     if(cmd=="q") quit();
 }
 
@@ -518,14 +503,18 @@ void Menu::searchByStudentUP() {
     Student st1 = Student(cmd,"");
     st1.getNameByUP();
     st1.loadClassesperUCofStudentUsingNAME();
+    if(st1.getName()!="-1"){
     st1.loadSchedule();
     st1.printSchedule();
+    }else{
+        cout<<"Student not found\n>Back[0]\n>Quit[q]";
+    }
     getline(cin, cmd);
-    while(cmd!="1" && cmd!="q"){
+    while(cmd!="0" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
-    if(cmd=="1") Searchbystudent();
+    if(cmd=="0") Schedules1();
     if(cmd=="q") quit();
 }
 
@@ -867,6 +856,14 @@ void Menu::BiggestUC() {
     cout << "│  Back [1]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
+    string cmd;
+    getline(cin, cmd);
+    while(cmd!="1" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") quit();
+    if (cmd=="0") run();
 
 }
 
