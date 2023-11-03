@@ -26,7 +26,8 @@ public:
     void StudentsByYear();
     void BiggestUC();
 
-    void Edit();
+    void ModifyDatabase();
+    void RemoveStudentMenu();
 
     void Students();
     void OfAClass();
@@ -44,7 +45,7 @@ public:
 
     void quit();
 
-
+    bool removeStudent(string code, string name, string UcCode); //remove mesmo, nao experimentar senao perde-se info do ficheiro
 
 };
 

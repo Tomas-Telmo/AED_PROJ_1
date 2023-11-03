@@ -9,7 +9,7 @@ void Menu::skiplines() {
 }
 
 void Menu::run() {
-    cout <<"Welcome to the schedule app menu! What do you wish to do?"<<endl;
+
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                    Menu                     │\n"
             "╞═════════════════════════════════════════════╡\n"
@@ -26,7 +26,7 @@ void Menu::run() {
     getline(cin, cmd);
     if (cmd=="q") quit();
 
-    while(cmd!="1" && cmd!="2"){
+    while(cmd!="1" && cmd!="2" && cmd!="3"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -42,7 +42,7 @@ void Menu::run() {
             QuickSearchDatabase();
             break;
         case 3:
-            cout<<"soon";                                               //TODO EDIT
+            ModifyDatabase();
             break;
     }
 }
@@ -565,6 +565,117 @@ void Menu::searchByStudentUP() {
     if(cmd=="q") quit();
 }
 
+//----------------------------------------------------------MODIFY DATABASE-------------------------------------------------
+
+void Menu::ModifyDatabase() {
+    skiplines();
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│              Modify Database                │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│ >Add Student                            [1] │\n"
+            "│ >Remove Student                         [2] │\n"
+            "│ >Switch Student                         [3] │\n"
+            "│                                             │\n"
+            "│  >Back [0]                        >Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+    if (cmd=="q") quit();
+    if(cmd=="0") run();
+
+    while(cmd!="1" && cmd!="2" && cmd!="3"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+
+    int operation = stoi(cmd);
+
+    switch (operation) {
+        case 1:
+
+            break;
+        case 2:
+            RemoveStudentMenu();
+            break;
+        case 3:
+
+            break;
+    }
+
+}
+
+
+
+
+void Menu::RemoveStudentMenu() {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│               Remove Student                │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│                                             │\n"
+            "│          >Type the student UPcode           │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│               Remove Student                │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│                                             │\n"
+            "│           >Type the student Name            │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd2;
+    getline(cin, cmd2);
+
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│               Remove Student                │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│            >Type the student UC             │\n"
+            "│               (e.g:L.EIC021)                │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd3;
+    getline(cin, cmd3);
+    bool flag = removeStudent(cmd, cmd2, cmd3);
+    if(flag) {
+        cout << "╒═════════════════════════════════════════════╕\n"
+                "│               Remove Student                │\n"
+                "╞═════════════════════════════════════════════╡\n"
+                "│                                             │\n"
+                "│   "<<cmd2<<" has been removed from "<<cmd3<<" │\n"
+                "│ >Back [0]                         >Quit [q] │\n"
+                "╘═════════════════════════════════════════════╛\n"
+                "                                               \n";
+        getline(cin, cmd);
+        while(cmd!="q" && cmd!="0"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if (cmd=="q") quit();
+        if (cmd=="0") RemoveStudentMenu();
+    }
+    else if(!flag) {
+        skiplines();
+        cout<<"Not a valid UPcode/Name/UC\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") ModifyDatabase();
+        if(cmd=="q") quit();
+
+
+    }
+
+
+}
+
 void Menu::quit() {
     exit(0);
 }
@@ -918,6 +1029,44 @@ void Menu::BiggestUC() {
     }
     if(cmd=="q") quit();
     if (cmd=="0") QuickSearchDatabase();
+
+}
+
+bool Menu::removeStudent(string code, string name, string UcCode) {
+    std::ifstream arquivo_original("students_classes.csv");
+    std::ofstream arquivo_temporario("temp.csv");
+
+    bool flag=false;
+    if (!arquivo_original.is_open() || !arquivo_temporario.is_open()) {
+        std::cerr << "Erro ao abrir os ficheiros." << std::endl;
+        quit();
+    }
+
+    std::string linha;
+    while (std::getline(arquivo_original, linha)) {
+        std::stringstream linha_stream(linha);
+        std::string up, nm, uc, classcode;
+
+        if (std::getline(linha_stream, up, ',') &&
+            std::getline(linha_stream, nm, ',') &&
+            std::getline(linha_stream, uc, ',') &&
+            std::getline(linha_stream, classcode)) {
+
+            // Verifica se a linha corresponde aos critérios de exclusão
+            if (up!= code || nm != name || uc != UcCode) {
+                arquivo_temporario << linha << std::endl;
+            }
+            else flag=true;
+        }
+    }
+
+    arquivo_original.close();
+    arquivo_temporario.close();
+
+    remove("students_classes.csv");
+    // Renomeie o arquivo temporário para o nome do arquivo original
+    rename("temp.csv", "students_classes.csv");
+    return flag;
 
 }
 
