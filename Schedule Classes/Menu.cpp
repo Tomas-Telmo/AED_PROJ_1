@@ -234,7 +234,7 @@ void Menu::scheduleORstudents(std::string classcode, UC uc, std::string year) {
             "│ > Schedule                              [1] │\n"
             "│ > Student list                          [2] │\n"
             "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+            "│ >Back [0]                         >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
 
@@ -299,7 +299,7 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
     }
 
     cout << "│                                             │\n"
-            "│                 Descending[1]               │\n"
+            "│                >Descending[1]               │\n"
             "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
@@ -363,9 +363,9 @@ void Menu::QuickSearchDatabase() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                Quick Search                 │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│  Get schedule                           [1] │\n"
-            "│  UC with the gretest number of students [2] │\n"
-            "│  Students registered in at least n UCs  [3] │\n"
+            "│ >Get schedule                           [1] │\n"
+            "│ >UC with the gretest number of students [2] │\n"
+            "│ >Students registered in at least n UCs  [3] │\n"
             "│                                             │\n"
             "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
@@ -509,7 +509,7 @@ void Menu::searchByStudentName() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│           Type the student Name to          │\n"
+            "│           >ype the student Name to          │\n"
             "│               see his Schedule              │\n"
             "│     (Only use letters from the alphabet)    │\n"
             "│                                             │\n"
@@ -539,7 +539,7 @@ void Menu::searchByStudentUP() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│             Type the student UP             │\n"
+            "│            >Type the student UP             │\n"
             "│             to see his Schedule             │\n"
             "│               (e.g:202012345)               │\n"
             "│                                             │\n"
@@ -582,7 +582,7 @@ void Menu::Students() {
             "│   Of a year                             [3] │\n"
             "│   Minimum UC's                          [4] │\n"
             "│                                             │\n"
-            "│   Back [5]                         Quit [q] │\n"
+            "│  >Back [5]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -618,7 +618,7 @@ void Menu::OfAClass() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│             Type the student UC             │\n"
+            "│            >Type the student UC             │\n"
             "│               (e.g:L.EIC021)                │\n"
             "│                                             │\n"
             "╘═════════════════════════════════════════════╛\n"
@@ -628,12 +628,12 @@ void Menu::OfAClass() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Students                   │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│            Type a Student Class             │\n"
+            "│           >Type a Student Class             │\n"
             "│                                             │\n"
             "│               (e.g: 2LEIC11)                │\n"
             "│      2-year    LEIC-course  11-classNum     │\n"
             "│                                             │\n"
-            "│                                    Quit [q] │\n"
+            "│                                   >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd2;
@@ -763,7 +763,7 @@ void Menu::StudentsByYear() {
             "│             Type the year you want          │\n"
             "│                   to check                  │\n"
             "│                                             │\n"
-            "│                                    Quit [q] │\n"
+            "│                                   >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n";
 
     string cmd;
@@ -828,7 +828,7 @@ void Menu::StudentsByYear() {
 
     }
 
-    cout << "│  Back [0]                          Quit [q] │\n"
+    cout << "│ >Back [0]                         >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     getline(cin, cmd);
@@ -907,7 +907,7 @@ void Menu::BiggestUC() {
     }
 
     cout << "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+            "│ >Back [0]                         >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
