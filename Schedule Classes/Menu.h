@@ -40,8 +40,11 @@ public:
     void scheduleORstudents(string classcode, UC uc, string year);
     void classSchedule(string classcode, UC uc, string year);
     void classStudentList(string classcode, UC uc, string year);
+    void classStudentListDescending(string classcode,UC uc,string year,set<Student> students);
 
     void quit();
+
+
 
 };
 

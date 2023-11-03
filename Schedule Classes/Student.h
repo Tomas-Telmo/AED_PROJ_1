@@ -40,6 +40,7 @@ public:
     string fromdoubletohour(double num);
 
     bool operator<(const Student& other)const;
+    static bool descending(const Student& one, const Student& other);
 };
 
 

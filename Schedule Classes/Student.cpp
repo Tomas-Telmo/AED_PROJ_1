@@ -41,7 +41,7 @@ void Student::setName(std::string name_) {
 }
 
 bool Student::operator<(const Student &other) const {
-    return this->code < other.code;
+    return this->name < other.name;
 }
 
 void Student::getNameByUP() {
@@ -205,6 +205,10 @@ string Student::fromdoubletohour(double num) {
     }
     return to_string(hours) + ":00";
 
+}
+
+bool Student::descending(const Student& one,const Student &other) {
+    return one.name > other.name;
 }
 
 

@@ -8,114 +8,114 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projeto_AED_1">
-				<Option output="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Projeto_AED_1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug"/>
+				<Option output="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projeto_AED_1/fast">
-				<Option output="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Projeto_AED_1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug"/>
+				<Option output="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Class.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Class.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Class.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Class.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Menu.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Menu.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Menu.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Menu.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Student.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Student.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/Student.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Student.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/StudentClass.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/StudentClass.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/StudentClass.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/StudentClass.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/UC.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/UC.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/UC.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/UC.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/Schedule Classes/main.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/main.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Utilizador/OneDrive/Ambiente de Trabalho/code/CLion stuff/PROJETO AED1/CMakeLists.txt">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

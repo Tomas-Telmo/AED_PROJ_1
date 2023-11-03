@@ -231,8 +231,8 @@ void Menu::scheduleORstudents(std::string classcode, UC uc, std::string year) {
     cout << "╒═════════════════════════════════════════════╕\n";
     cout << "│                "<< classcode <<"                      │\n";
     cout << "╞═════════════════════════════════════════════╡\n"
-            "│  Schedule                               [1] │\n"
-            "│  Student list                           [2] │\n"
+            "│ > Schedule                              [1] │\n"
+            "│ > Student list                          [2] │\n"
             "│                                             │\n"
             "│  Back [0]                          Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
@@ -299,20 +299,62 @@ void Menu::classStudentList(std::string classcode, UC uc, std::string year) {
     }
 
     cout << "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+            "│                 Descending[1]               │\n"
+            "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                           \n";
     string cmd;
 
     getline(cin, cmd);
-    while(cmd!="0" && cmd!="q"){
+    while(cmd!="0" && cmd!="q" && cmd!="1"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
 
     if(cmd=="q") quit();
+    if(cmd=="1") classStudentListDescending(classcode, uc, year, students);
     if (cmd=="0") scheduleORstudents(classcode, uc, year);
 
+}
+
+void Menu::classStudentListDescending(string classcode,UC uc,string year,set<Student> students) {
+    skiplines();
+    list<Student> lstdnts;
+    for(auto ss:students) {
+        lstdnts.push_back(ss);
+    }
+    lstdnts.sort(Student::descending);
+
+
+
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│                  Students                   │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│      NAME                UP                 │\n";
+
+
+    for (Student st : lstdnts) {
+
+        cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
+
+    }
+
+    cout << "│                                             │\n"
+            "│                 Ascending[1]                │\n"
+            "│  >Back [0]                        >Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                           \n";
+    string cmd;
+
+    getline(cin, cmd);
+    while(cmd!="0" && cmd!="q" && cmd!="1"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+
+    if(cmd=="q") quit();
+    if(cmd=="1") classStudentList(classcode, uc, year);
+    if (cmd=="0") scheduleORstudents(classcode, uc, year);
 }
 
 //-----------------------------------------QUICK-SEARCH----------------------------------------------------------------------
@@ -325,7 +367,7 @@ void Menu::QuickSearchDatabase() {
             "│  UC with the gretest number of students [2] │\n"
             "│  Students registered in at least n UCs  [3] │\n"
             "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+            "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -361,10 +403,10 @@ void Menu::Schedules1() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│  Search by Class                        [1] │\n"
-            "│  Search by Student                      [2] │\n"
+            "│ > Search by Class                       [1] │\n"
+            "│ > Search by Student                     [2] │\n"
             "│                                             │\n"
-            "│  Back [0]                          Quit [q] │\n"
+            "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -401,7 +443,7 @@ void Menu::SearchByClass() {
             "│               (e.g: 2LEIC11)                │\n"
             "│      2-year    LEIC-course  11-classNum     │\n"
             "│                                             │\n"
-            "│                                    Quit [q] │\n"
+            "│                                   >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
@@ -432,7 +474,7 @@ void Menu::Searchbystudent() {
             "│   Use Name                              [2] │\n"
             "│                                             │\n"
             "│                                             │\n"
-            "│   Back [0]                         Quit [q] │\n"
+            "│   >Back [0]                       >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
             "                                               \n";
     string cmd;
