@@ -79,7 +79,7 @@ void Menu::LookThroughDataBase() {
             UCperYear("1");
             break;
         case 2:
-            UCperYear("2");                                               //TODO EDIT
+            UCperYear("2");
             break;
         case 3:
             UCperYear("3");
@@ -490,7 +490,6 @@ void Menu::Searchbystudent() {
     switch (operation) {
         case 1:
             searchByStudentUP();
-
             break;
         case 2:
             searchByStudentName();
@@ -598,11 +597,7 @@ void Menu::ModifyDatabase() {
         case 2:
             RemoveStudentMenu();
             break;
-        case 3:
-
-            break;
     }
-
 }
 
 
@@ -1020,7 +1015,6 @@ bool Menu::searchUC(string UcCode) {
     ifstream classesPerUCFile;
 
     classesPerUCFile.open("classes_per_uc.csv", ios::in);
-    //classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
 
     if(!classesPerUCFile.is_open()){
         cerr << "ERROR: UNABLE TO OPEN CLASSES PER UC FILE " << endl;

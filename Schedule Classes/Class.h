@@ -1,4 +1,7 @@
-
+/**
+ * @file Class.h
+ * @brief Defines the Class class(Aula).
+ */
 #ifndef PROJETO_AED_1_CLASS_H
 #define PROJETO_AED_1_CLASS_H
 
@@ -6,6 +9,11 @@
 using namespace std;
 
 class Class {
+    /**
+     * @class Class
+     * @brief Represents a Class(Aula).
+     *
+     */
     string weekday; /*!< A private string that stores the weekday of a Class(Aula)*/
     double starthour; /*!< A private double value that stores the start hour of a Class(Aula) in hours*/
     double duration; /*!< A private double value that stores the duration of a Class(Aula) in hours*/

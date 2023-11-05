@@ -1,3 +1,7 @@
+/**
+ * @file StudentClass.h
+ * @brief Defines the StudentClass class (representa uma turma).
+ */
 #ifndef PROJETO_AED_1_STUDENTCLASS_H
 #define PROJETO_AED_1_STUDENTCLASS_H
 
@@ -9,7 +13,11 @@
 #include "list"
 
 class StudentClass{
-
+    /**
+     * @class StudentClass
+     * @brief Represents a StudentClass(Aula).
+     *
+     */
     set<Student> studentSet; /*!< A private set that stores Students*/
     string code; /*!< A private string that stores the Class Code*/
     list<Class> scheduleList; /*!< A private list that stores the Classes(Aulas), basicly a brute schedule*/
@@ -48,12 +56,12 @@ public:
     //! \param UCcode
     void readStudentsClassesFile(string UCcode);
 
-    //! Function that reads the classes.csv to push_back the classes(aulas) in a list called scheduleList
+    //!Function that reads the classes.csv to push_back the classes(aulas) in a list called scheduleList
     bool readClassesFile();
 
     //! Function that reads the classes.csv to push_back the classes(aulas) of a UC in a list called scheduleList
     //! \param UCcode
-    //! \return
+    //! \return a boolean value to check if there is at least one Class(Aula) for the UC
     bool readClassesFileForUC(string UCcode);
 
     //! Function that reads the classes.csv and places the Students of a StudentClass(Turma) of a UC in the studentSet
@@ -69,9 +77,9 @@ public:
     //! \return string hour
     string fromdoubletohour(double num);
 
-    //! Overload of the operator <
+    //! Overload of the operator < that sorts by StudentClass code
     //! \param other wich is a StudentClass
-    //! \return a bollean value
+    //! \return a boolean value
     bool operator<( const StudentClass& other) const;
 };
 #endif //PROJETO_AED_1_STUDENTCLASS_H

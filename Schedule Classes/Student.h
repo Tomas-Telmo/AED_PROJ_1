@@ -1,3 +1,7 @@
+/**
+ * @file Student.h
+ * @brief Defines the Student class.
+ */
 #ifndef PROJETO_AED_1_STUDENT_H
 #define PROJETO_AED_1_STUDENT_H
 
@@ -11,6 +15,11 @@
 using namespace std;
 
 class Student {
+    /**
+     * @class Student
+     * @brief Represents a Student.
+     *
+     */
     string code;/*!< A private string that stores the student UP code*/
     string name;/*!< A private string that stores the student Name*/
     list<pair<string,string>> UCandClasses;/*!< A private list with pairs <ucCode, classCode>, that way we can understant in wich StudentClass(Turma) of a UC the Student is*/
@@ -79,12 +88,12 @@ public:
     void printSchedule();
 
 
-    //!Overload of the operator <
+    //!Overload of the operator < that sorts by name
     bool operator<(const Student& other)const;
 
     //!Bool function
     /**
-     * Used to sort the list in the oposite order
+     * Used to sort the list in the oposite order from Z to A
      */
     static bool descending(const Student& one, const Student& other);
 };
