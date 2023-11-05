@@ -11,46 +11,46 @@
 using namespace std;
 
 class Student {
-    string code;
-    string name;
-    list<pair<string,string>> UCandClasses;
-    list<Class> schedule;
+    string code;/*!< A private string that stores the student UP code*/
+    string name;/*!< A private string that stores the student Name*/
+    list<pair<string,string>> UCandClasses;/*!< A private list with pairs <ucCode, classCode>, that way we can understant in wich StudentClass(Turma) of a UC the Student is*/
+    list<Class> schedule;/*!< A private list that stores the Classes(Aulas), basicly a brute schedule*/
 
 
 public:
-    //!A Contructor for Class(Aula)
-    /**
-     *
-     * @param code_
-     * @param name_
-     */
+    //! A Contructor for Class(Aula)
+    //! \param code_
+    //! \param name_
     Student(string code_, string name_);
 
-    //!A Contructor for Class(Aula)
-    /**
-     *
-     * @param student
-     */
+    //! A Contructor for Class(Aula)
+    //! \param student
     Student(Student const &student);
 
-    //!Getter for the UP code of a Student
+    //! Getter for the UP code of a Student
+    //! \return
     string getCode() const;
 
-    //!Getter for the Name of a Student
+    //! Getter for the Name of a Student
+    //! \return
     string getName() const;
 
-    //!Getter list of StudentClasses(Turma) of a Student
+    //! Getter list of StudentClasses(Turma) of a Student
+    //! \return
     list<pair<string,string>> getUCandClasses();
 
-    //!Getter for the Schedule of a Student
+    //! Getter for the Schedule of a Student
+    //! \return
     list<Class> getSchedule();
 
 
 
-    //!Setter for the UP code of a Student
+    //! Setter for the UP code of a Student
+    //! \param code_
     void setCode(string code_);
 
-    //!Getter for the Name of a Student
+    //! Setter for the UP code of a Student
+    //! \param name_
     void setName(string name_);
 
     //!Function that searches for the name of a Student using the UP code

@@ -33,14 +33,6 @@ int UC::getNumberOfClasses() const {
     return this->studentclassSet.size();
 }
 
-void UC::setUcCode(string uccode) {
-    this->UcCode = uccode;
-}
-
-void UC::setUcClasses(set<StudentClass> UcClasses_) {
-    this->studentclassSet = UcClasses_;
-}
-
 void UC::addStudentClass(StudentClass stdtClass) {
     this->studentclassSet.insert(stdtClass);
 }

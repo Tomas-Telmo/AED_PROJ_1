@@ -23,15 +23,13 @@ public:
     void searchByStudentName();
     void searchByStudentUP();
     void CountByMinimumUC();
-    void StudentsByYear();
+
     void BiggestUC();
 
     void ModifyDatabase();
     void RemoveStudentMenu();
 
-    void Students();
-    void OfAClass();
-    void OfACourse();
+
 
 
 

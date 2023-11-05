@@ -6,12 +6,12 @@
 using namespace std;
 
 class Class {
-    string weekday;
-    double starthour;
-    double duration;
-    string type;
-    string classCode;
-    string UcCode;
+    string weekday; /*!< A private string that stores the weekday of a Class(Aula)*/
+    double starthour; /*!< A private double value that stores the start hour of a Class(Aula) in hours*/
+    double duration; /*!< A private double value that stores the duration of a Class(Aula) in hours*/
+    string type; /*!< A private string that stores the type Class(Aula), T for Teorical, P for Pratical, ...*/
+    string classCode; /*!< A private string that stores the StudentClass(Turma) code of that Class(Aula)*/
+    string UcCode; /*!< A private string that stores the UC code of the UC of the Class(Aula)*/
 public:
     //!A Contructor for Class(Aula)
     Class();

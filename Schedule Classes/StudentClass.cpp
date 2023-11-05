@@ -35,18 +35,6 @@ int StudentClass::getCapacity() const {
     return this->studentSet.size();
 }
 
-void StudentClass::setCode(string code_) {
-    this->code = code_;
-}
-
-void StudentClass::setStudents(set<Student> students_) {
-    this->studentSet = students_;
-}
-
-void StudentClass::addStudent(Student student) {
-    this->studentSet.insert(student);
-}
-
 bool StudentClass::operator<(const StudentClass &other) const {
     return this->code < other.code;
 }
@@ -96,7 +84,6 @@ bool StudentClass::readClassesFile() {
     ifstream classes_file;
 
     classes_file.open("classes.csv");
-    //classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes.csv");
 
     set<Class> Classes;
     string line;
@@ -132,6 +119,56 @@ bool StudentClass::readClassesFile() {
 
         if (code == classCode) {
             
+            Class cl = Class(weekday, starthour, duration, type, classCode, UcCode);
+            scheduleList.push_back(cl);
+            found =true;
+        }
+    }
+    scheduleList.sort();
+    classes_file.close();
+    return found;
+}
+
+bool StudentClass::readClassesFileForUC(string UCcode) {
+    ifstream classes_file;
+
+    classes_file.open("classes.csv");
+    //classes_file.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes.csv");
+
+    set<Class> Classes;
+    string line;
+    string weekday;
+    double starthour;
+    double duration;
+    string type;
+    string classCode;
+    string UcCode;
+    bool found=false;
+
+    if (!classes_file.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN CLASSES FILE" << endl;
+    }
+
+    getline(classes_file, line);
+
+    while (getline(classes_file, line)) {
+        stringstream ss(line);
+
+        getline(ss, classCode, ',');
+        getline(ss, UcCode, ',');
+        getline(ss, weekday, ',');
+
+        std::string startHourStr, durationStr;
+
+        getline(ss, startHourStr, ',');
+        getline(ss, durationStr, ',');
+        getline(ss, type, ',');
+
+        starthour = stod(startHourStr);
+        duration = stod(durationStr);
+
+        if (code == classCode && UCcode == UcCode) {
+
             Class cl = Class(weekday, starthour, duration, type, classCode, UcCode);
             scheduleList.push_back(cl);
             found =true;
@@ -220,74 +257,7 @@ string StudentClass::fromdoubletohour(double num) {
 
 }
 
-void StudentClass::printStudentsbyUCandClass(string UCcode) {
-    cout << "╒═════════════════════════════════════════════╕\n"
-            "│                  Students                   │\n"
-            "╞═════════════════════════════════════════════╡\n"
-            "│      Turma: "<<code<<"    UC:"<<UCcode<< "          │\n";
 
 
-    for (Student st : studentSet) {
-
-        cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
-
-    }
-
-    cout << "│  Back [1]                          Quit [q] │\n"
-            "╘═════════════════════════════════════════════╛\n"
-            "                                           \n";
-}
-
-void StudentClass::loadStudentsofACourse(string course) {
-    ifstream fileSC;                                    //of a student
-    fileSC.open("students_classes.csv");
-
-    if (!fileSC.is_open()) {
-        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
-        return;
-    }
-
-    string line;
-    string student_code;
-    string student_name;
-    string UCcode;
-    string ClassCode;
-
-
-    getline(fileSC,line); //skip 1st line
-
-    while(getline(fileSC,line)){
-        stringstream ss(line);
-
-        getline(ss,student_code,',');
-        getline(ss, student_name, ',');
-        getline(ss,UCcode,',');
-        getline(ss,ClassCode);
-
-        if (ClassCode.find(course) != string::npos) {
-            studentSet.insert(Student(student_code,student_name));
-        }
-
-    }
-    fileSC.close();
-}
-
-void StudentClass::printStudentsbyCourse(string Course) {
-    cout << "╒═════════════════════════════════════════════╕\n"
-            "│                  Students                   │\n"
-            "╞═════════════════════════════════════════════╡\n"
-            "│                Course: "<<Course<< "                 │\n";
-
-
-    for (Student st : studentSet) {
-
-        cout << "│      " << st.getName() << setw(20-st.getName().length())<<" "<<st.getCode()<<"          │\n";
-
-    }
-
-    cout << "│  Back [1]                          Quit [q] │\n"
-            "╘═════════════════════════════════════════════╛\n"
-            "                                           \n";
-}
 
 
