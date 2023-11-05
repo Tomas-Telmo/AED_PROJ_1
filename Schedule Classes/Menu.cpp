@@ -509,7 +509,7 @@ void Menu::searchByStudentName() {
     cout << "╒═════════════════════════════════════════════╕\n"
             "│                  Schedules                  │\n"
             "╞═════════════════════════════════════════════╡\n"
-            "│           >ype the student Name to          │\n"
+            "│           >Type the student Name to         │\n"
             "│               see his Schedule              │\n"
             "│     (Only use letters from the alphabet)    │\n"
             "│                                             │\n"
@@ -593,7 +593,7 @@ void Menu::ModifyDatabase() {
 
     switch (operation) {
         case 1:
-
+            addStudent();
             break;
         case 2:
             RemoveStudentMenu();
@@ -1071,3 +1071,152 @@ bool Menu::removeStudent(string code, string name, string UcCode) {
 }
 
 //--------------------------------------------CLASSES---------------------------------------------------------------
+
+
+void Menu::addStudent() {
+    skiplines();
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│              Add Student to UC              │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│   Use UP                                [1] │\n"
+            "│   Use Name                              [2] │\n"
+            "│                                             │\n"
+            "│                                             │\n"
+            "│   >Back [0]                       >Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+
+    getline(cin, cmd);
+    while(cmd!="1" && cmd!="2" && cmd!="0" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    if(cmd=="q") quit();
+    int operation = stoi(cmd);
+
+    switch (operation) {
+        case 1:
+            if (addStudentByUP()) {
+                cout << "Done!\n>Back[0]\n>Quit[q]";
+                getline(cin, cmd);
+                while (cmd != "0" && cmd != "q") {
+                    cout << "Choose a valid option \n";
+                    getline(cin, cmd);
+                }
+                if (cmd == "q") quit();
+                else addStudent();
+            } else {
+                addStudent();
+            }
+            break;
+    }
+}
+
+bool Menu::addStudentByUP(){
+    int studentUCs=0;
+    string UCcode;
+    skiplines();
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│              Add Student to UC              │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│            >Type the student UP             │\n"
+            "│                                             │\n"
+            "│               (e.g:202012345)               │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+    Student st1 = Student(cmd,"");
+    try{
+
+        st1.getNameByUP();
+        st1.loadClassesperUCofStudentUsingNAME();
+    }catch(logic_error) {
+        return false;
+    }
+    if(st1.getName()=="-1"){
+        cout<<"Student not found\n";
+        return false;
+    }
+    studentUCs=st1.getUCandClasses().size();
+    if(studentUCs>=7){
+        cout<<"A student cant be registered in more than 7 UCs\n";
+        return false;
+    }
+    //check if student is already in UC
+    for(auto i: st1.getUCandClasses()) {
+        if (i.first == UCcode) {
+            cout << "Student already registered in this UC";
+        }
+    }
+    skiplines();
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│              Add Student to UC              │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│              >Type the UC code              │\n"
+            "│                                             │\n"
+            "│                (e.g:L.EIC001)               │\n"
+            "│                                             │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    getline(cin, cmd);
+    if(!searchUC(cmd)){
+        cout<<"UC not found\n";
+        return false;
+    }
+    UCcode=cmd;
+    UC uc = UC(UCcode, {}, {});
+    uc.Make();
+    list<StudentClass> freeClasses= uc.freeStudentClasses();
+    if(freeClasses.end()->getCapacity()-freeClasses.end()->getCapacity()>=4){
+        return false;
+    }
+    writeToFile(st1.getCode(),st1.getName(),UCcode,freeClasses.begin()->getCode());
+    return true;
+}
+
+void Menu::writeToFile(string studentCode, string studentName, string UCCode, string classCode) {
+    ofstream fileSC;                                    //of a student
+    fileSC.open("students_classes.csv", std::ios::app);
+
+    if (!fileSC.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+    fileSC<<studentCode<<','<<studentName<<','<<UCCode<<','<<classCode<<'\n';
+}
+
+bool Menu::searchUC(string UcCode) {
+    ifstream classesPerUCFile;
+
+    classesPerUCFile.open("classes_per_uc.csv", ios::in);
+    //classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
+
+    if(!classesPerUCFile.is_open()){
+        cerr << "ERROR: UNABLE TO OPEN CLASSES PER UC FILE " << endl;
+    }
+
+    string dummy;
+    string line;
+    string UC_code;
+    string class_code;
+
+    getline(classesPerUCFile, dummy); //skip 1st line
+
+    while(getline(classesPerUCFile, line)) {
+        stringstream ss(line);
+
+        getline(ss,UC_code,',');
+        getline(ss,class_code);
+
+        if(UC_code == UcCode){
+            return true;
+        }
+
+    }
+
+    classesPerUCFile.close();
+    return false;
+}

@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-
 
 # The main recursive "all" target.
 all: CMakeFiles/Projeto_AED_1.dir/all
+all: CMakeFiles/Doxygen.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Projeto_AED_1.dir/clean
+clean: CMakeFiles/Doxygen.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -81,7 +83,7 @@ clean: CMakeFiles/Projeto_AED_1.dir/clean
 CMakeFiles/Projeto_AED_1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Projeto_AED_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/CMakeFiles --progress-num=2,3,4,5,6,7,8 "Built target Projeto_AED_1"
 .PHONY : CMakeFiles/Projeto_AED_1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -99,6 +101,32 @@ Projeto_AED_1: CMakeFiles/Projeto_AED_1.dir/rule
 CMakeFiles/Projeto_AED_1.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projeto_AED_1.dir/build.make CMakeFiles/Projeto_AED_1.dir/clean
 .PHONY : CMakeFiles/Projeto_AED_1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Doxygen.dir
+
+# All Build rule for target.
+CMakeFiles/Doxygen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Doxygen.dir/build.make CMakeFiles/Doxygen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Doxygen.dir/build.make CMakeFiles/Doxygen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/CMakeFiles --progress-num=1 "Built target Doxygen"
+.PHONY : CMakeFiles/Doxygen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Doxygen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Doxygen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Doxygen.dir/rule
+
+# Convenience name for target.
+Doxygen: CMakeFiles/Doxygen.dir/rule
+.PHONY : Doxygen
+
+# clean rule for target.
+CMakeFiles/Doxygen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Doxygen.dir/build.make CMakeFiles/Doxygen.dir/clean
+.PHONY : CMakeFiles/Doxygen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

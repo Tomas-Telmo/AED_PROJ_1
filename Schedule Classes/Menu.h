@@ -47,6 +47,11 @@ public:
 
     bool removeStudent(string code, string name, string UcCode); //remove mesmo, nao experimentar senao perde-se info do ficheiro
 
+    void writeToFile(string studentCode, string studentName, string UCCode, string classCode);
+    bool addStudentByUP();
+    void addStudent();
+    bool searchUC(string UcCode);
+
 };
 
 

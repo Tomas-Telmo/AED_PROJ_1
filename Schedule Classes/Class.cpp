@@ -45,26 +45,7 @@ string Class::getUcCode() {
 }
 
 
-void Class::setBegining(string weekday_, double starthour_) {
-    this->weekday = weekday_;
-    this->starthour = starthour_;
-}
 
-void Class::setDuration(double duration_) {
-    this->duration = duration_;
-}
-
-void Class::setType(string type_) {
-    this->type = type_;
-}
-
-void Class::setUcCode(string code) {
-    this->UcCode = code;
-}
-
-void Class::setClassCode(string classcode_) {
-    this->classCode = classcode_;
-}
 
 bool Class::operator<(Class other) const {
     map<string ,int> week;

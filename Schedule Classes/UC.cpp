@@ -104,3 +104,22 @@ void UC::Make() {
     this->readStudentsClassesFile();
 }
 
+
+
+
+
+
+list<StudentClass> UC::freeStudentClasses(){
+    list<StudentClass> ans;
+    this->readStudentsClassesFile();
+    for(auto i : this->getStudentClassSet()){
+        i.readStudentsClassesFile(i.getCode());
+        cout<<i.getCode()<<' '<<i.getCapacity();
+        if(i.getCapacity()<MAX_STUDENTS)ans.push_back(i);
+    }
+    ans.sort([](const StudentClass& std1, const StudentClass& std2) {
+        return std1.getCapacity() < std2.getCapacity();
+    });
+    return ans;
+}
+

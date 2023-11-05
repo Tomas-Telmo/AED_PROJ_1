@@ -13,6 +13,7 @@ class UC{
     string UcCode;
     set<StudentClass> studentclassSet;
     list<StudentClass> studentclassList;
+    int MAX_STUDENTS = 28;
 
 
 public:
@@ -34,6 +35,9 @@ public:
     void readStudentsClassesFile();
     void Make();
     bool operator<(const UC& other) const;
+
+    list<StudentClass> freeStudentClasses();
+
 };
 
 #endif //PROJETO_AED_1_UC_H
