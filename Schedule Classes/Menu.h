@@ -114,6 +114,8 @@ public:
     //! \return true if can be registered and false if doesn't
     bool addStudentByUP();
 
+    bool addStudentByName();
+
     //! Function that checks if a UC exists
     //! \param UcCode
     //! \return true if exists, false if doesn't

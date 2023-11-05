@@ -76,6 +76,38 @@ void Student::getNameByUP() {
     }
     fileSC.close();
 }
+void Student::getUPByName() {
+    ifstream fileSC;                                    //of a student
+    fileSC.open("students_classes.csv");
+
+    if (!fileSC.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+
+    string line;
+    string student_code;
+    string student_name;
+    string UCcode;
+    string ClassCode;
+
+
+    getline(fileSC,line); //skip 1st line
+
+    while(getline(fileSC,line)){
+        stringstream ss(line);
+
+        getline(ss,student_code,',');
+        getline(ss, student_name, ',');
+        getline(ss,UCcode,',');
+        getline(ss,ClassCode);
+
+        if(name == student_name){
+            code = student_code;
+        }
+    }
+    fileSC.close();
+}
 
 
 

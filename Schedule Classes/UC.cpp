@@ -105,7 +105,6 @@ list<StudentClass> UC::freeStudentClasses(){
     this->readStudentsClassesFile();
     for(auto i : this->getStudentClassSet()){
         i.readStudentsClassesFile(i.getCode());
-        cout<<i.getCode()<<' '<<i.getCapacity();
         if(i.getCapacity()<MAX_STUDENTS)ans.push_back(i);
     }
     ans.sort([](const StudentClass& std1, const StudentClass& std2) {

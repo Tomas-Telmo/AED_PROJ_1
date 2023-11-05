@@ -68,6 +68,8 @@ public:
      */
     void getNameByUP();
 
+    void getUPByName();
+
     //!Finds the StudentClasses(Turmas) of each UC of a Student using the Student Name
     /**
      * Creates a list of pairs <uccode, classcode>, called UCandClasses, directly from students_classes.csv file
