@@ -960,18 +960,40 @@ bool Menu::addStudentByUP(){
         return false;
     }
     if(st1.getName()=="-1"){
-        cout<<"Student not found\n";
+        cout<<"Student not found\n\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") addStudent();
+        if(cmd=="q") quit();
         return false;
     }
     studentUCs=st1.getUCandClasses().size();
     if(studentUCs>=7){
-        cout<<"A student cant be registered in more than 7 UCs\n";
+        cout<<"A student cant be registered in more than 7 UCs\n\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") addStudent();
+        if(cmd=="q") quit();
         return false;
     }
     //check if student is already in UC
     for(auto i: st1.getUCandClasses()) {
         if (i.first == UCcode) {
-            cout << "Student already registered in this UC";
+            cout << "Student already registered in this UC\n>Back[0]\n>Quit[q]";
+            getline(cin, cmd);
+            while(cmd!="0" && cmd!="q"){
+                cout<<"Choose a valid option \n";
+                getline(cin, cmd);
+            }
+            if(cmd=="0") addStudent();
+            if(cmd=="q") quit();
+            return false;
         }
     }
     skiplines();
@@ -986,7 +1008,14 @@ bool Menu::addStudentByUP(){
             "                                               \n";
     getline(cin, cmd);
     if(!searchUC(cmd)){
-        cout<<"UC not found\n";
+        cout<<"UC not found\n\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") addStudent();
+        if(cmd=="q") quit();
         return false;
     }
     UCcode=cmd;
