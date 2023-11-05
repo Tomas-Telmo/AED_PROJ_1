@@ -27,6 +27,15 @@ public:
     void QuickSearchDatabase();
 
     //! Display function
+    void Year1();
+
+    //! Display function
+    void Year2();
+
+    //!Display function
+    void StudentClassesOFyear(string year);
+
+    //! Display function
     void Schedules1();
 
     //! Display function

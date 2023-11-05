@@ -31,7 +31,7 @@ void Menu::run() {
         getline(cin, cmd);
     }
 
-    //if(cmd=="q") cmd="3";
+
     int operation = stoi(cmd);
 
     switch (operation) {
@@ -49,6 +49,39 @@ void Menu::run() {
 
 //LOOK THROUGH DATA BASE
 void Menu::LookThroughDataBase() {
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│            Look through database            │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│ > Student Class                         [1] │\n"
+            "│ > Student Class of UC                   [2] │\n"
+            "│                                             │\n"
+            "│ >Back [0]                         >Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+
+    if (cmd == "q") quit();
+    if (cmd == "0") run();
+
+    while (cmd != "1" && cmd != "2") {
+        cout << "Choose a valid option \n";
+        getline(cin, cmd);
+    }
+    int operation = stoi(cmd);
+
+    switch (operation) {
+        case 1:
+            Year2();
+            break;
+        case 2:
+            Year1();
+            break;
+
+    }
+}
+
+void Menu::Year1() {
     skiplines();
 
     cout << "╒═════════════════════════════════════════════╕\n"
@@ -65,13 +98,13 @@ void Menu::LookThroughDataBase() {
     getline(cin, cmd);
 
     if (cmd=="q") quit();
+    if (cmd=="0") LookThroughDataBase();
 
     while(cmd!="0" && cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
 
-    //if(cmd=="q") cmd="3";
     int operation = stoi(cmd);
 
     switch (operation) {
@@ -91,13 +124,129 @@ void Menu::LookThroughDataBase() {
 
 }
 
+void Menu::Year2() {
+    skiplines();
+
+    cout << "╒═════════════════════════════════════════════╕\n"
+            "│            Look through database            │\n"
+            "╞═════════════════════════════════════════════╡\n"
+            "│ > 1st Year                              [1] │\n"
+            "│ > 2nd Year                              [2] │\n"
+            "│ > 3rd Year                              [3] │\n"
+            "│                                             │\n"
+            "│ >Back [0]                         >Quit [q] │\n"
+            "╘═════════════════════════════════════════════╛\n"
+            "                                               \n";
+    string cmd;
+    getline(cin, cmd);
+
+    if (cmd=="q") quit();
+    if (cmd=="0") LookThroughDataBase();
+
+    while(cmd!="0" && cmd!="1" && cmd!="2" && cmd!="3" && cmd!="q"){
+        cout<<"Choose a valid option \n";
+        getline(cin, cmd);
+    }
+
+    int operation = stoi(cmd);
+
+    switch (operation) {
+        case 1:
+            StudentClassesOFyear("1");
+            break;
+        case 2:
+            StudentClassesOFyear("2");
+            break;
+        case 3:
+            StudentClassesOFyear("3");
+            break;
+        case 0:
+            run();
+            break;
+    }
+}
+
+void Menu::StudentClassesOFyear(string year) {
+    ifstream classesPerUCFile;
+
+    classesPerUCFile.open("classes_per_uc.csv", ios::in);
+
+    if (!classesPerUCFile.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
+    }
+    string dummy;
+    string line;
+    string UC_code;
+    string class_code;
+
+    set<StudentClass> SCset;
+
+    getline(classesPerUCFile, dummy); //skip 1st line
+
+    while (getline(classesPerUCFile, line)) {
+        stringstream ss(line);
+
+        getline(ss, UC_code, ',');
+        getline(ss, class_code);
+
+        if( class_code[0] == year[0]){
+            SCset.insert(StudentClass(class_code,{},{}));
+        }
+    }
+
+    cout << "╒═════════════════════════════════════════════╕\n";
+    cout << "│                 YEAR " << year << "                      │\n";
+    cout << "╞═════════════════════════════════════════════╡\n"
+            "│                                             │\n";
+
+    for (auto sc : SCset) {
+        cout <<"│      "<<sc.getCode()<<"                                │\n";
+
+
+    }
+
+    cout <<"│                                             │\n"
+           "│  >Type Class code to see it's schedule      │\n"
+           "│                                             │\n"
+           "│  >Back [0]                        >Quit [q] │\n"
+           "╘═════════════════════════════════════════════╛\n"
+           "                                           \n";
+
+    string cmd;
+    getline(cin, cmd);
+
+    if (cmd=="q") quit();
+    if (cmd=="0") Year2();
+
+    bool flag = false;
+    while(flag==false) {
+        for(auto sc : SCset){
+            if(cmd == sc.getCode() ){
+                flag = true;
+            }
+
+        }
+        if(!flag){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+    }
+
+    StudentClass sc = StudentClass(cmd,{},{});
+    sc.readClassesFile();
+    sc.printSchedule();
+
+    getline(cin, cmd);
+    if (cmd=="q") quit();
+    if (cmd=="0") StudentClassesOFyear(year);
+}
+
 
 void Menu::UCperYear(const std::string& year) {
 
     ifstream classesPerUCFile;
 
     classesPerUCFile.open("classes_per_uc.csv", ios::in);
-    //classesPerUCFile.open("C:\\Users\\Utilizador\\OneDrive\\Ambiente de Trabalho\\code\\CLion stuff\\PROJETO AED1\\cmake-build-default\\classes_per_uc.csv");
 
     if (!classesPerUCFile.is_open()) {
         cerr << "ERROR: UNABLE TO OPEN CLASSE PER UC FILE " << endl;
@@ -153,6 +302,7 @@ void Menu::UCperYear(const std::string& year) {
 
     string cmd;
     getline(cin, cmd);
+
 
     if(cmd=="q") quit();
     if (cmd=="0") LookThroughDataBase();
@@ -263,7 +413,7 @@ void Menu::classSchedule(std::string classcode, UC uc, std::string year) {
     skiplines();
 
     StudentClass SC = StudentClass(classcode, {}, {});
-    if(SC.readClassesFile()){
+    if(SC.readClassesFileForUC(uc.getUCCode())){
         SC.printSchedule();
     }
 

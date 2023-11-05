@@ -8,123 +8,127 @@
 		<Option virtualFolders="CMake Files\;CMake Files\docs\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projeto_AED_1">
-				<Option output="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option output="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projeto_AED_1/fast">
-				<Option output="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option output="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Projeto_AED_1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projeto_AED_1/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Doxygen">
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Doxygen"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 Doxygen"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug"/>
+				<Option working_dir="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/hugocruz/Desktop/FEUP/AED/proj-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Class.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Class.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Class.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Class.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Menu.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Menu.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Menu.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Menu.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Student.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Student.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/Student.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/Student.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/StudentClass.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/StudentClass.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/StudentClass.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/StudentClass.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/UC.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/UC.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/UC.h">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/UC.h">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/Schedule Classes/main.cpp">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/Schedule Classes/main.cpp">
 			<Option target="Projeto_AED_1"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/CMakeLists.txt">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/hugocruz/Desktop/FEUP/AED/proj-master/docs/Doxyfile">
+		<Unit filename="/home/antero/Desktop/FEUP_UBUNTO/AED/PROJETO_AED/docs/Doxyfile">
 			<Option virtualFolder="CMake Files\docs\"/>
 		</Unit>
 	</Project>
