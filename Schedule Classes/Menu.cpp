@@ -724,6 +724,7 @@ void Menu::ModifyDatabase() {
             "│ >Add Student                            [1] │\n"
             "│ >Remove Student                         [2] │\n"
             "│ >Switch Student                         [3] │\n"
+            "│ >Redo                                   [4] │\n"
             "│                                             │\n"
             "│  >Back [0]                        >Quit [q] │\n"
             "╘═════════════════════════════════════════════╛\n"
@@ -733,7 +734,7 @@ void Menu::ModifyDatabase() {
     if (cmd=="q") quit();
     if(cmd=="0") run();
 
-    while(cmd!="1" && cmd!="2" && cmd!="3"){
+    while(cmd!="1" && cmd!="2" && cmd!="3" && cmd!="4") {
         cout<<"Choose a valid option \n";
         getline(cin, cmd);
     }
@@ -746,6 +747,12 @@ void Menu::ModifyDatabase() {
             break;
         case 2:
             RemoveStudentMenu();
+            break;
+        case 3:
+
+            break;
+        case 4:
+            redo();
             break;
     }
 }
@@ -1005,7 +1012,44 @@ void Menu::BiggestUC() {
 
 }
 
+string Menu::getClassCode(string code, string name, string UcCode) {
+    ifstream students_classes_file;
+
+    students_classes_file.open("students_classes.csv", ios::in);
+
+    if (!students_classes_file.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+
+    }
+
+    string dummy;
+    string line;
+    string student_code;
+    string student_name;
+    string FileUCcode;
+    string FileClassCode;
+    map <string,int> UCs;
+
+    getline(students_classes_file,dummy); //skip 1st line
+
+    while(getline(students_classes_file,line)) {
+        stringstream ss(line);
+
+        getline(ss, student_code, ',');
+        getline(ss, student_name, ',');
+        getline(ss, FileUCcode, ',');
+        getline(ss, FileClassCode);
+
+        if(code == student_code && name == student_name && FileUCcode == UcCode) {
+            students_classes_file.close();
+            return FileClassCode;
+        }
+    }
+}
+
 bool Menu::removeStudent(string code, string name, string UcCode) {
+    string classcode = getClassCode(code, name, UcCode);
+    addtohistory(code, name, UcCode, classcode, "remove");
     std::ifstream arquivo_original("students_classes.csv");
     std::ofstream arquivo_temporario("temp.csv");
 
@@ -1099,6 +1143,131 @@ void Menu::addStudent() {
             break;
     }
 }
+
+void Menu::writeToFile(string studentCode, string studentName, string UCCode, string classCode) {
+    ofstream fileSC;                                    //of a student
+    fileSC.open("students_classes.csv", std::ios::app);
+
+    if (!fileSC.is_open()) {
+        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
+        return;
+    }
+    fileSC<<studentCode<<','<<studentName<<','<<UCCode<<','<<classCode<<'\n';
+}
+
+bool Menu::searchUC(string UcCode) {
+    ifstream classesPerUCFile;
+
+    classesPerUCFile.open("classes_per_uc.csv", ios::in);
+
+    if(!classesPerUCFile.is_open()){
+        cerr << "ERROR: UNABLE TO OPEN CLASSES PER UC FILE " << endl;
+        quit();
+    }
+
+    string dummy;
+    string line;
+    string UC_code;
+    string class_code;
+
+    getline(classesPerUCFile, dummy); //skip 1st line
+
+    while(getline(classesPerUCFile, line)) {
+        stringstream ss(line);
+
+        getline(ss,UC_code,',');
+        getline(ss,class_code);
+
+        if(UC_code == UcCode){
+            return true;
+        }
+
+    }
+
+    classesPerUCFile.close();
+    return false;
+}
+
+void Menu::addtohistory(string upcode, string name, string uccode, string classcode, string request) {
+    std::ifstream arquivo_original("history.csv");
+    std::ofstream arquivo_temporario("temp.csv");
+
+
+    if (!arquivo_original.is_open() || !arquivo_temporario.is_open()) {
+        std::cerr << "Erro ao abrir os ficheiros." << std::endl;
+        quit();
+    }
+
+    arquivo_temporario<< request+','+upcode+','+name+','+uccode+','+classcode <<endl;
+
+    std::string linha;
+    while (std::getline(arquivo_original, linha)) {
+        arquivo_temporario << linha << std::endl;
+    }
+
+    arquivo_original.close();
+    arquivo_temporario.close();
+
+    remove("history.csv");
+
+    rename("temp.csv", "history.csv");
+}
+
+void Menu::redo() {
+    std::ifstream arquivo_original("history.csv");
+    std::ofstream arquivo_temporario("temp.csv");
+
+    if (!arquivo_original.is_open() || !arquivo_temporario.is_open()) {
+        std::cerr << "Erro ao abrir os ficheiros." << std::endl;
+        quit();
+    }
+    std::string linha, request, upcode, name, uccode, classcode;
+    getline(arquivo_original, linha);
+    stringstream ss(linha);
+    getline(ss,request,',');
+    getline(ss,upcode,',');
+    getline(ss,name,',');
+    getline(ss,uccode,',');
+    getline(ss,classcode);
+
+    while (std::getline(arquivo_original, linha)) {
+        arquivo_temporario << linha << std::endl;
+    }
+
+    arquivo_original.close();
+    arquivo_temporario.close();
+
+    remove("history.csv");
+    rename("temp.csv", "history.csv");
+
+    std::ifstream arquivo_original2("students_classes.csv");
+    std::ofstream arquivo_temporario2("temp.csv");
+
+    if (!arquivo_original2.is_open() || !arquivo_temporario2.is_open()) {
+        std::cerr << "Erro ao abrir os ficheiros." << std::endl;
+        quit();
+    }
+
+    if (request=="remove") {
+        arquivo_temporario2 << upcode+','+name+','+uccode+','+classcode<< endl;
+    }
+    std::string line;
+    while (std::getline(arquivo_original2, line)) {
+        arquivo_temporario2 << line << std::endl;
+    }
+
+    arquivo_original2.close();
+    arquivo_temporario2.close();
+
+    remove("students_classes.csv");
+    // Renomeie o arquivo temporário para o nome do arquivo original
+    rename("temp.csv", "students_classes.csv");
+
+
+
+}
+
+
 bool Menu::addStudentByName() {
     int studentUCs = 0;
     string UCcode;
@@ -1187,8 +1356,27 @@ bool Menu::addStudentByName() {
     if(freeClasses.end()->getCapacity()-freeClasses.end()->getCapacity()>=4){
         return false;
     }
-    writeToFile(st1.getCode(),st1.getName(),UCcode,freeClasses.begin()->getCode());
-    return true;
+    string freeStudentClass;
+    bool compatible=false;
+    for(auto i:freeClasses){
+        if(compareClassSchedule(i,st1.getSchedule(),UCcode)){
+            freeStudentClass= i.getCode();
+            compatible= true;
+            writeToFile(st1.getCode(),st1.getName(),UCcode,freeStudentClass);
+            return true;
+        }
+    }
+    if(!compatible){
+        cout<<"NotCompatible\n\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") addStudent();
+        if(cmd=="q") quit();
+        return false;
+    }
 }
 bool Menu::addStudentByUP(){
     int studentUCs=0;
@@ -1278,49 +1466,55 @@ bool Menu::addStudentByUP(){
     if(freeClasses.end()->getCapacity()-freeClasses.end()->getCapacity()>=4){
         return false;
     }
-    writeToFile(st1.getCode(),st1.getName(),UCcode,freeClasses.begin()->getCode());
-    return true;
-}
-
-void Menu::writeToFile(string studentCode, string studentName, string UCCode, string classCode) {
-    ofstream fileSC;                                    //of a student
-    fileSC.open("students_classes.csv", std::ios::app);
-
-    if (!fileSC.is_open()) {
-        cerr << "ERROR: UNABLE TO OPEN STUDENT CLASSES FILE " << endl;
-        return;
-    }
-    fileSC<<studentCode<<','<<studentName<<','<<UCCode<<','<<classCode<<'\n';
-}
-
-bool Menu::searchUC(string UcCode) {
-    ifstream classesPerUCFile;
-
-    classesPerUCFile.open("classes_per_uc.csv", ios::in);
-
-    if(!classesPerUCFile.is_open()){
-        cerr << "ERROR: UNABLE TO OPEN CLASSES PER UC FILE " << endl;
-    }
-
-    string dummy;
-    string line;
-    string UC_code;
-    string class_code;
-
-    getline(classesPerUCFile, dummy); //skip 1st line
-
-    while(getline(classesPerUCFile, line)) {
-        stringstream ss(line);
-
-        getline(ss,UC_code,',');
-        getline(ss,class_code);
-
-        if(UC_code == UcCode){
+    string freeStudentClass;
+    bool compatible=false;
+    for(auto i:freeClasses){
+        if(compareClassSchedule(i,st1.getSchedule(),UCcode)){
+            freeStudentClass= i.getCode();
+            compatible= true;
+            writeToFile(st1.getCode(),st1.getName(),UCcode,freeStudentClass);
             return true;
         }
-
     }
+    if(!compatible){
+        cout<<"NotCompatible\n\n>Back[0]\n>Quit[q]";
+        getline(cin, cmd);
+        while(cmd!="0" && cmd!="q"){
+            cout<<"Choose a valid option \n";
+            getline(cin, cmd);
+        }
+        if(cmd=="0") addStudent();
+        if(cmd=="q") quit();
+        return false;
+    }
+}
 
-    classesPerUCFile.close();
-    return false;
+bool Menu::compareClassSchedule(StudentClass studentClass, list<Class> schedule2,string UCCode) {
+    studentClass.readClassesFileForUC(UCCode);
+    for(auto schedule : studentClass.getScheduleList()){
+
+        for(auto otherSchedule : schedule2){
+
+            if(otherSchedule.getWeekday() == schedule.getWeekday()){
+
+                if(schedule.getType() == "T" || otherSchedule.getType() == "T")
+                    continue;
+
+                else{
+                    double scheduleClassStart = schedule.getStarthour();
+                    double scheduleClassEnd = schedule.getStarthour() + schedule.getDuration();
+                    double otherScheduleClassStart = otherSchedule.getStarthour();
+                    double otherScheduleClassEnd = otherSchedule.getStarthour() + otherSchedule.getDuration();
+
+                    if(scheduleClassStart > otherScheduleClassEnd || otherScheduleClassStart > scheduleClassStart || scheduleClassEnd == otherScheduleClassStart
+                       || otherScheduleClassEnd == scheduleClassStart)
+                        continue;
+                    else
+                        return false;
+                }
+            }
+        }
+    }
+    return true;
+
 }

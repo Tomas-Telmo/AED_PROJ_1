@@ -119,10 +119,12 @@ public:
     //! \param classCode
     void writeToFile(string studentCode, string studentName, string UCCode, string classCode);
 
-    //! Function that checks out if a student can be registered in a new UC if its possible
+    //! Function that checks out and adds if a student can be registered in a new UC if its possible
     //! \return true if can be registered and false if doesn't
     bool addStudentByUP();
 
+    //! Function that checks out and adds if a student can be registered in a new UC if its possible
+    //! \return true if can be registered and false if doesn't
     bool addStudentByName();
 
     //! Function that checks if a UC exists
@@ -132,6 +134,31 @@ public:
 
     //! Function that stops the execution
     void quit();
+
+    //! Function that gets and returns the classcode from the students_classes.csv
+    //! \param code
+    //! \param name
+    //! \param UcCode
+    //! \return
+    string getClassCode(string code, string name, string UcCode);
+
+    //! Function that adds "request,upcode,name,uccode,classcode" to a file named history
+    //! \param upcode
+    //! \param name
+    //! \param uccode
+    //! \param classcode
+    //! \param request can be remove, add or switch
+    void addtohistory(string upcode, string name, string uccode, string classcode, string request);
+
+    //!Function that deletes the last request from the history and cancels the last request
+    void redo();
+
+    //! Function that checks if a StudentClass Schedule is compatible with a Student Schedule
+    //! \param studentClass
+    //! \param schedule2
+    //! \param UCCode
+    //! \return
+    bool compareClassSchedule(StudentClass studentClass, list<Class> schedule2,string UCCode);
 };
 
 
